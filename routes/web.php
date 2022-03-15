@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard.index');
+});
+
+Route::get('/kelas', function () {
+    return view('dashboard.pages.kelas.index');
 });

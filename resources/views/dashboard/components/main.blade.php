@@ -24,9 +24,9 @@
 </head>
 <body class="font-inter relative min-h-screen md:flex"> 
     @include('dashboard.components.sidebar')
-    <div class="flex-1 px-2 mt-14 md:mt-0 text-2xl bg-indigo-50 min-h-screen ">
-        @yield('content')
-    </div>
+    
+    @yield('content')
+    
 
     <script>
         const btn= document.querySelector(".mobile-menu-button");
