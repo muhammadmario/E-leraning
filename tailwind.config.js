@@ -11,6 +11,9 @@ module.exports = {
       },
       colors:{
         'bsamar':"#1fdf64",
+      },
+      height: {
+        '128': '32rem',
       }
     },
   },

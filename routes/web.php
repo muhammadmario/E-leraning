@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
@@ -20,3 +25,13 @@ Route::get('/dashboard', function () {
 Route::get('/kelas', function () {
     return view('dashboard.pages.kelas.index');
 });
+
+Route::get('/kelas/create', function () {
+    return view('dashboard.pages.kelas.create');
+});
+
+Route::get('/kelas/edit', function () {
+    return view('dashboard.pages.kelas.edit');
+});
+
+
