@@ -1,4 +1,4 @@
-<nav class="nav flex flex-wrap items-center justify-between px-4 lg:px-0">
+<nav class="nav flex flex-wrap items-center justify-between px-4 lg:px-0 sticky top-0 z-50 bg-white border-b-2">
     <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
       <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="h-14 w-14 p-1 lg:p-0 ml-3 lg:ml-0">
     </div>
@@ -34,6 +34,5 @@
       <li class="border-t md:border-none bg-black rounded-md h-min">
         <a href="/blog/" class="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:text-grey-darker text-white">Sign in</a>
       </li>
-
     </ul>
   </nav>
