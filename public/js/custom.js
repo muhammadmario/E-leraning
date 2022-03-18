@@ -21,3 +21,4 @@ var fileName = input.files[0].name;
 // use fileName however fits your app best, i.e. add it into a div
 infoArea.textContent = 'Nama file: ' + fileName;
 }
+
