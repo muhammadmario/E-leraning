@@ -18,15 +18,15 @@
       </li>
       
       <li class="border-t md:border-none">
-        <a href="/blog/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Galeri</a>
+        <a href="/galeri" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Galeri</a>
       </li>
 
       <li class="border-t md:border-none">
-        <a href="/blog/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Lokasi</a>
+        <a href="/lokasi" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Lokasi</a>
       </li>
 
       <li class="border-t md:border-none">
-        <a href="/blog/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Tentang Kami</a>
+        <a href="/tentang-kami" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Tentang Kami</a>
       </li>
 
       <div class="border-r-2 mr-3 border-black hidden md:inline-block"></div>

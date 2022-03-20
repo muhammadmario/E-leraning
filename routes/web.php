@@ -29,6 +29,14 @@ Route::get('/kelas/makanan/nastar', function () {
     return view('user.pages.materi');
 });
 
+Route::get('/galeri', function () {
+    return view('user.pages.galeri');
+});
+
+Route::get('/login', function () {
+    return view('user.pages.login');
+});
+
 
 
 Route::get('/dashboard', function () {
