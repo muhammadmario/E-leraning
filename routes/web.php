@@ -17,12 +17,25 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/kelas', function () {
+    return view('user.pages.kelas');
+});
+
+Route::get('/kelas/makanan', function () {
+    return view('user.pages.kategori');
+});
+
+Route::get('/kelas/makanan/nastar', function () {
+    return view('user.pages.materi');
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
-Route::get('/kelas', function () {
+Route::get('/admin/kelas', function () {
     return view('dashboard.pages.kelas.index');
 });
 

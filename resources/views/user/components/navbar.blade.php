@@ -14,7 +14,7 @@
       </li>
       
       <li class="border-t md:border-none">
-        <a href="/about/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Kelas</a>
+        <a href="/kelas" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Kelas</a>
       </li>
       
       <li class="border-t md:border-none">
