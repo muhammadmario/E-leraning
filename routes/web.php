@@ -33,6 +33,10 @@ Route::get('/galeri', function () {
     return view('user.pages.galeri');
 });
 
+Route::get('/tentang-kami', function () {
+    return view('user.pages.tentang');
+});
+
 Route::get('/login', function () {
     return view('user.pages.login');
 });

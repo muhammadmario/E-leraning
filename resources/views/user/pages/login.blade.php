@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex flex-col md:flex-row min-h-screen mt-[-84px]">
-  <div class="w-1/3 bg-pink-400 hidden md:block">
+  <div class="w-1/3 bg-black hidden md:block">
   </div>
   <div class="w-full max-w-md mt-[84px] md:mt-0 mx-auto md:w-2/3 flex flex-col  md:justify-center items-center">
     <div class="w-full px-3 mt-3 md:mt-0">

@@ -31,8 +31,8 @@
 
       <div class="border-r-2 mr-3 border-black hidden md:inline-block"></div>
 
-      <li class="border-t md:border-none bg-black rounded-md h-min">
-        <a href="/blog/" class="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:text-grey-darker text-white">Sign in</a>
+      <li class="border-t md:border-none bg-black rounded-md h-min my-auto">
+        <a href="/login" class="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:text-grey-darker text-white">Sign in</a>
       </li>
     </ul>
   </nav>
