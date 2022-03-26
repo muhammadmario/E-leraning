@@ -3,15 +3,15 @@
 @section('content')
 <div class="flex flex-col">
     {{-- <h1 class="text-4xl font-light my-2">Tentang Kami</h1> --}}
-    <div class="w-full flex flex-col md:flex-row my-2">
+    {{-- <div class="w-full flex flex-col md:flex-row my-2">
         <div class="w-full md:w-1/2  max-h-max">
             <img src="{{ asset('image/atensi-logo.png') }}" class="w-40 md:w-60 md:h-60 m-auto" alt="logo" >
         </div>
         <div class="w-full md:w-1/2  max-h-max">
             <img src="{{ asset('image/kemensos.png') }}" class="w-40 md:w-60 md:h-60 m-auto" alt="logo" >
         </div>
-    </div> 
-    <img src="{{ asset('image/banner.jpeg') }}" class="rounded-md my-2 mx-3" alt="banner">
+    </div>  --}}
+    <img src="{{ asset('image/banner.jpeg') }}" class="rounded-md my-2 mx-3 md:mx-0" alt="banner">
     <div class="w-full flex flex-col md:flex-row my-2 md:gap-10 ">
         <div class="w-full md:w-1/2 max-h-max">
             <h1 class="text-base md:text-3xl text-center mb-3">Fungsi</h1>

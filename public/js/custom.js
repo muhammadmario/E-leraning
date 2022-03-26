@@ -22,3 +22,15 @@ var fileName = input.files[0].name;
 infoArea.textContent = 'Nama file: ' + fileName;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+

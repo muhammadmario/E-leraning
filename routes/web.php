@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,40 +25,52 @@ Route::get('/kelas', function () {
 
 Route::get('/kelas/makanan', function () {
     return view('user.pages.kategori');
-});
+})->middleware('auth');
 
 Route::get('/kelas/makanan/nastar', function () {
     return view('user.pages.materi');
-});
+})->middleware('auth');
 
 Route::get('/galeri', function () {
     return view('user.pages.galeri');
 });
+Route::get('/lokasi', function () {
+    return view('user.pages.lokasi');
+});
+
 
 Route::get('/tentang-kami', function () {
     return view('user.pages.tentang');
 });
 
-Route::get('/login', function () {
-    return view('user.pages.login');
-});
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/logout', [LoginController::class,'logout']);
 
+
+
+Route::get('/register', [RegisterController::class,'index']);
+Route::post('/register', [RegisterController::class,'store']);
 
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-});
+})->middleware('auth');
 
 Route::get('/admin/kelas', function () {
     return view('dashboard.pages.kelas.index');
-});
+})->middleware('auth');
 
-Route::get('/kelas/create', function () {
+Route::get('/admin/kelas/create', function () {
     return view('dashboard.pages.kelas.create');
-});
+})->middleware('auth');
 
-Route::get('/kelas/edit', function () {
+Route::get('/admin/kelas/edit', function () {
     return view('dashboard.pages.kelas.edit');
-});
+})->middleware('auth');
+
+Route::get('/admin/kelas/show', function () {
+    return view('dashboard.pages.kelas.show');
+})->middleware('auth');
 
 
