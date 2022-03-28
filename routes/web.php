@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -71,4 +72,10 @@ Route::get('/admin/kelas/show', function () {
     return view('dashboard.pages.kelas.show');
 })->middleware('admin');
 
+Route::get('/admin/register', function () {
+    return view('dashboard.pages.register.index');
+})->middleware('admin');
+
+Route::get('/admin/akun', [AccountController::class,"index"])->middleware('admin');
+Route::delete('/admin/akun/{user:id}', [AccountController::class,"destroy"])->middleware('admin');
 

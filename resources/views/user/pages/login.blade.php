@@ -19,7 +19,7 @@
         <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-red-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       @endif
-        <h1 class="text-2xl font-bold">Register to Atensi</h1>
+        <h1 class="text-2xl font-bold">Login to Atensi</h1>
         <div class="border-b-2 w-full mt-5"></div>
         <form action="/login" method="POST" class="flex flex-col gap-2 mt-2 ">
           @csrf
@@ -31,7 +31,7 @@
 
             <button type="submit" class="bg-black  text-white w-1/3 p-2 rounded-lg">Login</button>
         </form> 
-        <p class="text-sm text-center mt-2">Belum punya akun?<a class="text-sky-500" href="/register">Daftar</a></p>
+        <p class="text-sm text-center mt-2">Belum punya akun? <a class="text-sky-500" href="/register">Daftar</a></p>
 
     </div>
     

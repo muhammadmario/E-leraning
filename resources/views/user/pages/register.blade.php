@@ -6,7 +6,7 @@
   </div>
   <div class="w-full max-w-md mt-[84px] md:mt-0 mx-auto md:w-2/3 flex flex-col  md:justify-center items-center">
     <div class="w-full px-3 mt-3 md:mt-0">
-        <h1 class="text-2xl font-bold">Sign in to Atensi</h1>
+        <h1 class="text-2xl font-bold">Register to Atensi</h1>
         <div class="border-b-2 w-full mt-5"></div>
         <form action="/register" method="POST" class="flex flex-col gap-2 mt-2">
           @csrf
@@ -36,6 +36,8 @@
 
             <button type="submit" class="bg-black  text-white w-1/3 p-2 rounded-lg">Register</button>
         </form> 
+        <p class="text-sm text-center mt-2">Sudah punya akun? <a class="text-sky-500" href="/login">Login</a></p>
+
     </div>
     
   </div>
