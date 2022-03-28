@@ -47,30 +47,28 @@ Route::get('/login', [LoginController::class,'index'])->name('login')->middlewar
 Route::post('/login', [LoginController::class,'authenticate']);
 Route::post('/logout', [LoginController::class,'logout']);
 
-
-
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
 
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-})->middleware('auth');
+})->middleware('admin');
 
 Route::get('/admin/kelas', function () {
     return view('dashboard.pages.kelas.index');
-})->middleware('auth');
+})->middleware('admin');
 
 Route::get('/admin/kelas/create', function () {
     return view('dashboard.pages.kelas.create');
-})->middleware('auth');
+})->middleware('admin');
 
 Route::get('/admin/kelas/edit', function () {
     return view('dashboard.pages.kelas.edit');
-})->middleware('auth');
+})->middleware('admin');
 
 Route::get('/admin/kelas/show', function () {
     return view('dashboard.pages.kelas.show');
-})->middleware('auth');
+})->middleware('admin');
 
 
