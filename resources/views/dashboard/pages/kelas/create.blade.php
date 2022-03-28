@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex-1 px-2 md:px-3 mt-14 md:mt-0 bg-indigo-50 min-h-screen pt-2">
     <div class="flex w-full justify-between border-white border-b-2 items-center pb-2 mb-2">
-        <h1 class="text-xl font-normal md:text-2xl">Kelas</h1>
+        <h1 class="text-xl font-normal md:text-2xl">Create Kelas</h1>
         <div class="box shadow-sm h-14 py-2 px-3 bg-white md:flex md:gap-1 justify-evenly items-center rounded-md hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-800" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
@@ -24,8 +24,16 @@
             </div>
         </div>
     </div>
+
+    @if(session()->has('success'))
+    <div class="alert bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show" role="alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close box-content w-4 h-4 p-1 ml-auto text-green-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
     <div class="w-full flex">
-        <a href="/kelas" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-green-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-green-600">
+        <a href="/dashboard/kelas" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-green-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-green-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
               </svg>
@@ -33,36 +41,47 @@
         </a>
     </div>
     
-    <form id="fileUploadForm" method="post" action="#" enctype="multipart/form-data" class="md:w-2/3 w-full">
-        <label for="title"  class="tracking-wide text-sm font-medium">Judul</label>
-        <input id="title" type="text" name="title" value="" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2">
+    <form id="fileUploadForm" method="POST" action="/dashboard/kelas" enctype="multipart/form-data" class="md:w-2/3 w-full">
+        @csrf
+        <label for="name"  class="tracking-wide text-sm font-medium">Nama Kelas</label>
+        <input id="name" type="text" name="name" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('name') }}" required>
+        @error('name')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+        @enderror
 
-        <label for="gambar" class="tracking-wide text-sm font-medium">Gambar</label>
+        <label for="slug" class="tracking-wide text-sm font-medium">Slug</label>
+        <input id="slug" type="text" name="slug" readonly  class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('slug') }}" required>
+        @error('slug')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+        @enderror
+
+        <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
         <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
             <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" /></svg>
             <span class="text-sm md:text-base leading-normal">Select a file</span>
-            <input type='file' class="hidden" id="file-upload"/>   
+            <input type='file' class="hidden" id="image" name="image"/>   
         </label>
         <div id="file-upload-filename" class="mb-2 font-light text-sm"></div>
-
-        <label for="gambar" class="tracking-wide text-sm font-medium">Video</label>
-        <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
-            <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" /></svg>
-            <span class="text-sm md:text-base leading-normal">Select a file</span>
-            <input type='file' class="hidden" id="file-upload"/>   
-        </label>
-        <div id="file-upload-filename" class="mb-2 font-light text-sm"></div>
-
-        <label for="body" class="tracking-wide text-sm font-medium">Deskripsi</label>
-        <input id="body" type="hidden" name="body" value="">
-        <trix-editor input="body" class="bg-white"></trix-editor>  
+        @error('image')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+        @enderror
 
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Tambah</button>
         </div>
     </form>
+
+    <script>
+        const name = document.querySelector('#name');
+        const slug = document.querySelector('#slug');
+
+        name.addEventListener('change',function () {
+            fetch('/dashboard/checkSlug?name='+ name.value)
+            .then(response => response.json())
+            .then(data=> slug.value = data.slug)
+        })
+    </script>
     
 </div>  
 @endsection

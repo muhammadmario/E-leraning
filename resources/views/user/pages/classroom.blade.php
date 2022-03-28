@@ -14,16 +14,17 @@
         </div>
       </div>
    </div>
-   <h1 class="text-2xl md:text-3xl font-light">Kelas</h1>
-   <div class="grid grid-cols-1 md:grid-cols-2 mt-2">
-      <a href="/kelas/makanan">
-         <div class="h-44 md:h-52 lg:h-60 bg-black md:bg-slate-500 lg:bg-sky-600 relative"><span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">Makanan</span></div>
-      </a>   
-      <div class="h-44 md:h-52 lg:h-60 bg-sky-700 relative"><span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">Minuman</span></div>
-      <div class="h-44 md:h-52 lg:h-60 bg-yellow-500 relative"><span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl">Mengemudi</span></div>
-      <div class="h-44 md:h-52 lg:h-60 bg-green-600 relative"><span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl">Komputer</span></div>
-      <div class="h-44 md:h-52 lg:h-60 bg-black relative"><span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl">Bahasa Inggris  </span></div>
-    </div>
+   <h1 class="text-2xl md:text-3xl font-light ml-2">Kelas</h1>
+   <div class="grid grid-cols-2 md:grid-cols-3 mt-2 gap-2 mx-2">
+     @foreach ($classes as $class)
+     <a href="/kelas/{{ $class->id }}" class="aspect-[4/3] md:aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
+        <img src="{{ asset('storage/'.$class->image) }}" alt="{{ $class->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">
+        <span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">
+        {{ $class->name }}
+       </span>
+     </a>  
+     @endforeach
+  </div>
 </div>
 
 @endsection

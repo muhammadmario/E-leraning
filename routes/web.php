@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\AccountController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', [PagesController::class, 'showKelasOnHome']);
 
-Route::get('/kelas', function () {
-    return view('user.pages.kelas');
-});
+Route::get('/kelas', [PagesController::class, 'showKelas']);
 
-Route::get('/kelas/makanan', function () {
-    return view('user.pages.kategori');
-})->middleware('auth');
+Route::resource('/dashboard/kelas', ClassroomController::class);
+Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);
 
-Route::get('/kelas/makanan/nastar', function () {
-    return view('user.pages.materi');
-})->middleware('auth');
+// Route::get('/kelas/makanan', function () {
+//     return view('user.pages.kategori');
+// })->middleware('auth');
+
+// Route::get('/kelas/makanan/nastar', function () {
+//     return view('user.pages.materi');
+// })->middleware('auth');
 
 Route::get('/galeri', function () {
     return view('user.pages.galeri');
@@ -56,9 +60,9 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('admin');
 
-Route::get('/admin/kelas', function () {
-    return view('dashboard.pages.kelas.index');
-})->middleware('admin');
+// Route::get('/admin/kelas', function () {
+//     return view('dashboard.pages.kelas.index');
+// })->middleware('admin');
 
 Route::get('/admin/kelas/create', function () {
     return view('dashboard.pages.kelas.create');
