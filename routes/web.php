@@ -7,26 +7,24 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\PagesController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('index');
-// });
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 
 Route::get('/kelas', [PagesController::class, 'showKelas']);
 
-Route::resource('/dashboard/kelas', ClassroomController::class);
+
+
+Route::get('/dashboard/kelas', [ClassroomController::class, 'index']);
+Route::get('/dashboard/kelas/create', [ClassroomController::class, 'create']);
+Route::post('/dashboard/kelas', [ClassroomController::class, 'store']);
+// Route::get('/dashboard/kelas/{classroom}', [ClassroomController::class, 'show']);
+Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'edit']);
+Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update']);
+Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy']);
+
+// Route::resource('/dashboard/kelas', ClassroomController::class);
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);
+
 
 // Route::get('/kelas/makanan', function () {
 //     return view('user.pages.kategori');

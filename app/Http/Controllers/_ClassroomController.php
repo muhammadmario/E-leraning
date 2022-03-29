@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Classroom;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ClassroomController extends Controller
@@ -16,8 +15,7 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pages.kelas.index',['classrooms'=>Classroom::latest()->get()]);
-
+       return view('dashboard.pages.kelas.index',['classes'=>Classroom::latest()->get()]);
     }
 
     /**
@@ -27,8 +25,7 @@ class ClassroomController extends Controller
      */
     public function create()
     {
-        return view('dashboard.pages.kelas.create');
-
+        return view('dashboard.pages.kelas.create',['classes'=>Classroom::all()]);
     }
 
     /**
@@ -39,6 +36,8 @@ class ClassroomController extends Controller
      */
     public function store(Request $request)
     {
+        // ddd($request);
+        // return $request->file('image')->store('image-classroom');
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:classrooms',
@@ -57,76 +56,60 @@ class ClassroomController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Classroom  $classroom
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Classroom $classroom)
+    // public function show($id)
+    // {
+    //     return view('dashboard.pages.kelas.show', ['class'=>Classroom::find($id)]);
+    // }
+
+    public function show(Classroom $class)
     {
-        return view('dashboard.pages.kelas.show', ['classroom'=>$classroom]);
+        return view('dashboard.pages.kelas.show', ['class'=>$class]);
+        // ddd($class);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Classroom  $classroom
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Classroom $classroom)
+    public function edit($id)
     {
-        return view('dashboard.pages.kelas.edit', ['classroom'=>$classroom]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Classroom  $classroom
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Classroom $classroom)
+    public function update(Request $request, $id)
     {
-        $rules =[
-            'name'=>'required|max:255',
-            'image'=>'image|file|max:1024',
-        ];
-
-        if ($request->slug != $classroom->slug) {
-            $rules['slug'] = 'required|unique:classrooms';
-        }
-
-        $validateData = $request->validate($rules);
-
-        if ($request->file('image')) {
-            if($classroom->image){
-                Storage::delete($classroom->image);
-            }
-            $validateData['image']=$request->file('image')->store('image-classroom');
-        }
-
-        Classroom::where('id', $classroom->id)->update($validateData);
-
-        return redirect('/dashboard/kelas')->with('success', 'Kelas Berhasil diubah!');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Classroom  $classroom
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Classroom $classroom)
+    public function destroy($id)
     {
-        if($classroom->image){
-            Storage::delete($classroom->image);
-        }
-        Classroom::destroy($classroom->id);
-
-        return redirect('/dashboard/kelas')->with('success', 'Kelas Berhasil dihapus!');
+        //
     }
 
     public function checkSlug(Request $request)
     {
         $slug = SlugService::createSlug(Classroom::class, 'slug', $request->name);
+      
         return response()->json(['slug'=>$slug]);
     }
+
+
 }
