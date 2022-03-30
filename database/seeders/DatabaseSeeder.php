@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Classroom;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -62,6 +63,30 @@ class DatabaseSeeder extends Seeder
             'name'=>'Dasar B.inggris',
             'slug'=>'dasar-b.inggris',
             'image'=>'image-classroom/dasar-b.inggris.jpg'
+        ]);
+
+        Category::create([
+            'name'=>'Nastar',
+            'slug'=>'nastar',
+            'image'=>'image-category/nastar.jpg'
+        ]);
+
+        Category::create([
+            'name'=>'Mie ayam',
+            'slug'=>'mie-ayam',
+            'image'=>'image-category/mie-ayam.jpg'
+        ]);
+
+        Category::create([
+            'name'=>'Kopi',
+            'slug'=>'kopi',
+            'image'=>'image-category/kopi.jpg'
+        ]);
+
+        Category::create([
+            'name'=>'Jus',
+            'slug'=>'jus',
+            'image'=>'image-category/jus.jpg'
         ]);
     }
 }

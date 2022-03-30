@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\PagesController;
@@ -25,6 +26,15 @@ Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'dest
 // Route::resource('/dashboard/kelas', ClassroomController::class);
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);
 
+
+// Route::resource('/dashboard/kategori', CategoryController::class);
+Route::get('/dashboard/kategori', [CategoryController::class, 'index']);
+Route::get('/dashboard/kategori/create', [CategoryController::class, 'create']);
+Route::post('/dashboard/kategori', [CategoryController::class, 'store']);
+// Route::get('/dashboard/kategori/{classroom}', [CategoryController::class, 'show']);
+Route::get('/dashboard/kategori/{category}/edit', [CategoryController::class, 'edit']);
+Route::put('/dashboard/kategori/{category}', [CategoryController::class, 'update']);
+Route::delete('/dashboard/kategori/{category}', [CategoryController::class, 'destroy']);
 
 // Route::get('/kelas/makanan', function () {
 //     return view('user.pages.kategori');
