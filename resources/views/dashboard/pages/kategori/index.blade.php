@@ -37,7 +37,7 @@
                         <img src="{{ asset('storage/'.$category->image) }}" alt="{{ $category->name }}" class="h-24 aspect-[4/3]">
                     </td>
                     <td class="p-3 text-sm text-gray-700">{{ $category->name }}</td>
-                    <td class="p-3 text-sm text-gray-700">Makanan</td>
+                    <td class="p-3 text-sm text-gray-700">{{ $category->classroom->name }}</td>
                     <td class="p-3 text-sm text-gray-700">
                         <div class="flex flex-row gap-2">
                             <a href="/dashboard/kategori/{{ $category->slug }}/edit">

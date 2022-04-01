@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Classroom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -16,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pages.kategori.index',['categories'=>Category::latest()->get()]);
+        return view('dashboard.pages.kategori.index',['categories'=>Category::with(['classroom'])->latest()->get()]);
     }
 
     /**
@@ -24,9 +25,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('dashboard.pages.kategori.create');
+    public function create(Classroom $classroom)
+    {   
+        return view('dashboard.pages.kategori.create',['classrooms'=>$classroom->all()]);
     }
 
     /**
@@ -40,7 +41,8 @@ class CategoryController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:categories',
-            'image'=> 'image|file|max:1024'
+            'image'=> 'image|file|max:1024',
+            'classroom_id' => 'required',
         ]);
 
         if ($request->file('image')) {
@@ -48,8 +50,10 @@ class CategoryController extends Controller
         }
 
         Category::create($validatedData);
+           
 
         return redirect('/dashboard/kategori')->with('success', 'Kelas berhasil ditambahkan!');
+       
     }
 
     /**
@@ -69,9 +73,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $category, Classroom $classroom)
     {
-        return view('dashboard.pages.kategori.edit',['category'=>$category]);
+        return view('dashboard.pages.kategori.edit',['category'=>$category, 'classrooms'=>$classroom->all()]);
     }
 
     /**
@@ -85,7 +89,9 @@ class CategoryController extends Controller
     {
         $rules =[
             'name'=>'required|max:255',
+            'classroom_id' => 'required',
             'image'=>'image|file|max:1024',
+            
         ];
 
         if ($request->slug != $category->slug) {

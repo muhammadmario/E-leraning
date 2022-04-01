@@ -26,4 +26,9 @@ class Classroom extends Model
     {
         return 'slug';
     }
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

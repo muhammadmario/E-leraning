@@ -17,6 +17,6 @@ class AccountController extends Controller
         
         User::destroy($user->id);
 
-        return redirect('/admin/akun')->with('success', 'Akun Berhasil dihapus!');
+        return redirect('/dashboard/akun')->with('success', 'Akun Berhasil dihapus!');
     }
 }

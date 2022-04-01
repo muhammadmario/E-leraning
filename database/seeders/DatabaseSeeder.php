@@ -67,24 +67,28 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name'=>'Nastar',
+            'classroom_id'=>1,
             'slug'=>'nastar',
             'image'=>'image-category/nastar.jpg'
         ]);
 
         Category::create([
             'name'=>'Mie ayam',
+            'classroom_id'=>2,
             'slug'=>'mie-ayam',
             'image'=>'image-category/mie-ayam.jpg'
         ]);
 
         Category::create([
             'name'=>'Kopi',
+            'classroom_id'=>3,
             'slug'=>'kopi',
             'image'=>'image-category/kopi.jpg'
         ]);
 
         Category::create([
             'name'=>'Jus',
+            'classroom_id'=>4,
             'slug'=>'jus',
             'image'=>'image-category/jus.jpg'
         ]);
