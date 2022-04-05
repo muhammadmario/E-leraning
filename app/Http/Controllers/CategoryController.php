@@ -91,7 +91,6 @@ class CategoryController extends Controller
             'name'=>'required|max:255',
             'classroom_id' => 'required',
             'image'=>'image|file|max:1024',
-            
         ];
 
         if ($request->slug != $category->slug) {

@@ -519,13 +519,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .mx-3 {
   margin-left: 0.75rem;
@@ -619,8 +619,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
 }
-.aspect-\[3\/4\] {
-  aspect-ratio: 3 / 4;
+.aspect-\[5\/3\] {
+  aspect-ratio: 5 / 3;
 }
 .h-44 {
   height: 11rem;
@@ -760,11 +760,11 @@ Ensure the default browser behavior of the `hidden` attribute.
      -moz-appearance: none;
           appearance: none;
 }
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -882,22 +882,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-.bg-sky-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
-}
-.bg-yellow-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-}
 .bg-sky-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
@@ -925,6 +909,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .bg-green-100 {
   --tw-bg-opacity: 1;
@@ -1378,6 +1366,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+@media (min-width: 640px) {
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media (min-width: 768px) {
 
   .md\:relative {
@@ -1441,16 +1435,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     aspect-ratio: 5 / 3;
   }
 
+  .md\:aspect-\[4\/3\] {
+    aspect-ratio: 4 / 3;
+  }
+
+  .md\:aspect-\[6\/3\] {
+    aspect-ratio: 6 / 3;
+  }
+
   .md\:h-72 {
     height: 18rem;
   }
 
   .md\:h-96 {
     height: 24rem;
-  }
-
-  .md\:h-52 {
-    height: 13rem;
   }
 
   .md\:h-60 {
@@ -1506,10 +1504,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1526,6 +1520,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: space-evenly;
   }
 
+  .md\:gap-0 {
+    gap: 0px;
+  }
+
   .md\:gap-4 {
     gap: 1rem;
   }
@@ -1538,13 +1536,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     gap: 2.5rem;
   }
 
-  .md\:border-none {
-    border-style: none;
+  .md\:gap-2 {
+    gap: 0.5rem;
   }
 
-  .md\:bg-slate-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+  .md\:border-none {
+    border-style: none;
   }
 
   .md\:p-0 {
@@ -1630,6 +1627,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 1024px) {
 
+  .lg\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .lg\:ml-0 {
     margin-left: 0px;
   }
@@ -1640,10 +1642,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:h-96 {
     height: 24rem;
-  }
-
-  .lg\:h-60 {
-    height: 15rem;
   }
 
   .lg\:h-6 {
@@ -1664,11 +1662,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:gap-1 {
     gap: 0.25rem;
-  }
-
-  .lg\:bg-sky-600 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(2 132 199 / var(--tw-bg-opacity));
   }
 
   .lg\:p-0 {

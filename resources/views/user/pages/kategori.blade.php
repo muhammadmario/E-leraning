@@ -1,7 +1,7 @@
 @extends('user.components.main')
 
 @section('content')
-<div class="flex flex-col">
+<div class="flex flex-col mx-3 lg:mx-0">
    <div class="flex justify-center mt-3">
       <div class=" w-full px-2 md:px-0 md:w-1/2">
         <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
@@ -14,8 +14,9 @@
         </div>
       </div>
    </div>
+
    <h1 class="text-2xl md:text-3xl font-light">Kategori : {{ $classroom->name }}</h1>
-   <div class="grid grid-cols-2 md:grid-cols-3 mt-2">
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 gap-1 md:gap-2">
       @foreach ($categories as $category)
       <a href="/kelas/{{ $classroom->slug }}/{{ $category->slug }}" class="aspect-[4/3] md:aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
          <img src="{{ asset('storage/'.$category->image) }}" alt="{{ $category->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">

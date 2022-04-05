@@ -16,9 +16,9 @@
       </div>
     </div>
     
-    <div class="grid grid-cols-2 md:grid-cols-3 mt-2 gap-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 mt-2 gap-2 md:gap-1">
       @foreach ($classes as $class)
-      <a href="/kelas/{{ $class->id }}" class="aspect-[4/3] md:aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
+      <a href="/kelas/{{ $class->slug }}" class="aspect-[5/3] md:aspect-[6/3] relative group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
          <img src="{{ asset('storage/'.$class->image) }}" alt="{{ $class->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">
          <span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">
          {{ $class->name }}

@@ -14,7 +14,7 @@
         </div>
       </div>
    </div>
-   <h1 class="text-2xl md:text-3xl font-light ml-2">Kelas</h1>
+   <h1 class="text-2xl md:text-3xl font-light ml-2">Daftar Kelas</h1>
    <div class="grid grid-cols-2 md:grid-cols-3 mt-2 gap-2 mx-2">
      @foreach ($classes as $class)
      <a href="/kelas/{{ $class->slug }}" class="aspect-[4/3] md:aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">

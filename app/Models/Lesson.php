@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Lesson;
-use App\Models\Classroom;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Category extends Model
+class Lesson extends Model
 {
     use HasFactory;
     use Sluggable;
@@ -19,7 +18,7 @@ class Category extends Model
     {
         return [
             'slug' => [
-                'source' => 'name'
+                'source' => 'title'
             ]
         ];
     }
@@ -29,13 +28,8 @@ class Category extends Model
         return 'slug';
     }
 
-    public function classroom()
+    public function category()
     {
-        return $this->belongsTo(Classroom::class);
-    }
-
-    public function lesson()
-    {
-        return $this->hasMany(Lesson::class);
+        return $this->belongsTo(Category::class);
     }
 }

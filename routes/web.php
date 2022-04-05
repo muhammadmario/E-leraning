@@ -13,6 +13,8 @@ Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
 Route::get('/kelas/{classroom}', [PagesController::class, 'showKategori']);
 Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftarMateri']);
+Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri']);
+
 Route::get('/galeri', function () {
 return view('user.pages.galeri');
 });
