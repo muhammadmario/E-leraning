@@ -37,12 +37,12 @@
                 <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Kategori</h3>
             </li>
         </a>
-        <a href="/materi">
-            <li class="flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6 text-slate-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+        <a href="/dashboard/materi">
+            <li class="{{ (request()->is('dashboard/materi*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
                   </svg>
-                <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Materi</h3>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Materi</h3>
             </li>
         </a>
         <h2 class="text-slate-600 text-xs md:text-sm md:font-medium md:px-3">Kustom</h2>

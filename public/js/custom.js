@@ -1,3 +1,4 @@
+//responsive mobile design
 const btn= document.querySelector(".mobile-menu-button");
 const sidebar = document.querySelector(".sidebar");
 
@@ -5,8 +6,21 @@ btn.addEventListener("click",()=>{
     sidebar.classList.toggle("-translate-x-full")
 })
 
+//slug
+const nameTitle = document.querySelector('#name');
+const slug = document.querySelector('#slug');
+
+nameTitle.addEventListener('change',function () {
+    fetch('/dashboard/checkSlug?name='+ nameTitle.value)
+    .then(response => response.json())
+    .then(data=> slug.value = data.slug)
+})
+
+
+
 var input = document.getElementById( 'image' );
 var infoArea = document.getElementById( 'file-upload-filename' );
+
 
 input.addEventListener( 'change', showFileName );
     function showFileName( event ) {
@@ -17,15 +31,6 @@ input.addEventListener( 'change', showFileName );
     // use fileName however fits your app best, i.e. add it into a div
     infoArea.textContent = 'Nama file: ' + fileName;
 }
-
-const nameTitle = document.querySelector('#name');
-const slug = document.querySelector('#slug');
-
-nameTitle.addEventListener('change',function () {
-    fetch('/dashboard/checkSlug?name='+ nameTitle.value)
-    .then(response => response.json())
-    .then(data=> slug.value = data.slug)
-})
 
 
 function previewImg() {
@@ -39,6 +44,33 @@ function previewImg() {
         imgPreview.src = e.target.result;
     }
 }
+
+const inputVideo = document.getElementById('video');
+const video = document.getElementById('video-prev');
+const videoSource = document.createElement('source');
+
+inputVideo.addEventListener('change', function() {
+  const files = this.files || [];
+
+  if (!files.length) return;
+  
+  const reader = new FileReader();
+
+  reader.onload = function (e) {
+    videoSource.setAttribute('src', e.target.result);
+    video.appendChild(videoSource);
+    video.load();
+    video.play();
+  };
+  
+  reader.onprogress = function (e) {
+    console.log('progress: ', Math.round((e.loaded * 100) / e.total));
+  };
+  
+  reader.readAsDataURL(files[0]);
+});
+
+
 
 
 

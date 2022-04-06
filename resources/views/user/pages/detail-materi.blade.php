@@ -9,9 +9,9 @@
         Your browser does not support the video tag.
     </video>
     <h1 class="text-2xl md:text-3xl text-center mt-2">{{ $lesson->name}}</h1>
-    <p class="px-2 text-sm md:text-base"> 
+    <div class="body-lesson"> 
        {!! $lesson->body !!}
-    </p>
+    </div>
 </div>
 
 @endsection

@@ -457,6 +457,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.invisible {
+  visibility: hidden;
+}
 .fixed {
   position: fixed;
 }
@@ -622,6 +625,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .aspect-\[5\/3\] {
   aspect-ratio: 5 / 3;
 }
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
 .h-44 {
   height: 11rem;
 }
@@ -659,6 +665,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-16 {
   height: 4rem;
+}
+.h-20 {
+  height: 5rem;
+}
+.h-28 {
+  height: 7rem;
 }
 .max-h-max {
   max-height: -webkit-max-content;
@@ -755,6 +767,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .list-decimal {
   list-style-type: decimal;
 }
+.list-none {
+  list-style-type: none;
+}
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -812,6 +827,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 .rounded-sm {
   border-radius: 0.125rem;

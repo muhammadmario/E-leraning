@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\PagesController;
 
 
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
@@ -61,6 +62,16 @@ Route::post('/dashboard/kategori', [CategoryController::class, 'store']);
 Route::get('/dashboard/kategori/{category}/edit', [CategoryController::class, 'edit']);
 Route::put('/dashboard/kategori/{category}', [CategoryController::class, 'update']);
 Route::delete('/dashboard/kategori/{category}', [CategoryController::class, 'destroy']);
+
+// Route::resource('/dashboard/materi', LessonController::class);
+Route::get('/dashboard/materi', [LessonController::class, 'index']);
+Route::get('/dashboard/materi/create', [LessonController::class, 'create']);
+Route::post('/dashboard/materi', [LessonController::class, 'store']);
+Route::get('/dashboard/materi/{lesson}', [LessonController::class, 'show']);
+Route::get('/dashboard/materi/{lesson}/edit', [LessonController::class, 'edit']);
+Route::put('/dashboard/materi/{lesson}', [LessonController::class, 'update']);
+Route::delete('/dashboard/materi/{lesson}', [LessonController::class, 'destroy']);
+
 
 
 // dashboard register akun

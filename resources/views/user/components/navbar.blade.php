@@ -9,23 +9,23 @@
     </label>
   
     <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto md:mr-3 lg:mr-0">
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none ">
         <a href="/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">Home</a>
       </li>
       
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none ">
         <a href="/kelas" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Kelas</a>
       </li>
       
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none ">
         <a href="/galeri" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Galeri</a>
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none ">
         <a href="/lokasi" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Lokasi</a>
       </li>
 
-      <li class="border-t md:border-none">
+      <li class="border-t md:border-none ">
         <a href="/tentang-kami" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Tentang Kami</a>
       </li>
 
