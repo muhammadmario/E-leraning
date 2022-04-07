@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Classroom;
 use App\Models\Lesson;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -12,7 +13,7 @@ class PagesController extends Controller
 
     public function showKelasOnHome()
     {
-       return view('index',['classes'=>Classroom::latest()->get()]);
+       return view('index',['classes'=>Classroom::latest()->get(),'testimonials'=>Testimonial::latest()->get()]);
     }
 
     public function showKelas()

@@ -32,40 +32,28 @@
         <h5 class="uppercase text-lg md:text-2xl text-center">Apa kata mereka?</h5>    
           <div id="carouselExampleCaptions" class="carousel slide relative carousel-dark" data-bs-ride="carousel">
             <div class="carousel-inner relative w-full overflow-hidden">
-              <div class="carousel-item active relative float-left w-full text-center ">
+              @if ($testimonials->count())
+                  <div class="carousel-item active relative float-left w-full text-center">
+                    <p class="text-sm md:text-lg lg:text-xl italic mx-auto text-gray-700 max-w-4xl">
+                      {{ $testimonials[0]->body }}
+                    </p>
+                    <div class="mt-12 mb-6 flex justify-center">
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                        class="rounded-full w-24 h-24 shadow-lg"
+                        alt="smaple image"
+                      />
+                    </div>
+                    <p class="text-gray-500">{{ $testimonials[0]->name }}</p>
+                  </div>
+              @else
+                <p class="fs-4 text-center">Not found</p>
+              @endif
+
+              @foreach ($testimonials->skip(1) as $testimonial)
+              <div class="carousel-item  relative float-left w-full text-center">
                 <p class="text-sm md:text-lg lg:text-xl italic mx-auto text-gray-700 max-w-4xl">
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
-                  numquam iure provident voluptate esse quasi, voluptas nostrum quisquam!"
-                </p>
-                <div class="mt-12 mb-6 flex justify-center">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-                    class="rounded-full w-24 h-24 shadow-lg"
-                    alt="smaple image"
-                  />
-                </div>
-                <p class="text-gray-500">- Anna Morian</p>
-              </div>
-              <div class="carousel-item relative float-left w-full text-center">
-                <p class="text-sm md:text-lg lg:text-xl italic mx-auto text-gray-700 max-w-4xl">
-                  "Neque cupiditate assumenda in maiores repudiandae mollitia adipisci maiores
-                  repudiandae mollitia consectetur adipisicing architecto elit sed adipiscing
-                  elit."
-                </p>
-                <div class="mt-12 mb-6 flex justify-center">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
-                    class="rounded-full w-24 h-24 shadow-lg"
-                    alt="smaple image"
-                  />
-                </div>
-                <p class="text-gray-500">- Teresa May</p>
-              </div>
-              <div class="carousel-item relative float-left w-full text-center">
-                <p class="text-sm md:text-lg lg:text-xl italic mx-auto text-gray-700 max-w-4xl">
-                  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur est laborum neque cupiditate assumenda in
-                  maiores."
+                  {{ $testimonial->body }}
                 </p>
                 <div class="mt-12 mb-6 flex justify-center">
                   <img
@@ -74,8 +62,10 @@
                     alt="smaple image"
                   />
                 </div>
-                <p class="text-gray-500">- Kate Allise</p>
+                <p class="text-gray-500">{{ $testimonial->name }}</p>
               </div>
+              @endforeach
+         
             </div>
             <button
               class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"

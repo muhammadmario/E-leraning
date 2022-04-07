@@ -8,7 +8,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
-
+use App\Http\Controllers\TestimonialController;
 
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
@@ -58,11 +58,11 @@ Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'dest
 Route::get('/dashboard/kategori', [CategoryController::class, 'index']);
 Route::get('/dashboard/kategori/create', [CategoryController::class, 'create']);
 Route::post('/dashboard/kategori', [CategoryController::class, 'store']);
-// Route::get('/dashboard/kategori/{classroom}', [CategoryController::class, 'show']);
 Route::get('/dashboard/kategori/{category}/edit', [CategoryController::class, 'edit']);
 Route::put('/dashboard/kategori/{category}', [CategoryController::class, 'update']);
 Route::delete('/dashboard/kategori/{category}', [CategoryController::class, 'destroy']);
 
+// dashboard materi
 // Route::resource('/dashboard/materi', LessonController::class);
 Route::get('/dashboard/materi', [LessonController::class, 'index']);
 Route::get('/dashboard/materi/create', [LessonController::class, 'create']);
@@ -72,7 +72,14 @@ Route::get('/dashboard/materi/{lesson}/edit', [LessonController::class, 'edit'])
 Route::put('/dashboard/materi/{lesson}', [LessonController::class, 'update']);
 Route::delete('/dashboard/materi/{lesson}', [LessonController::class, 'destroy']);
 
-
+// dashboard testimonial
+Route::get('/dashboard/testimonial', [TestimonialController::class, 'index']);
+Route::get('/dashboard/testimonial/create', [TestimonialController::class, 'create']);
+Route::post('/dashboard/testimonial', [TestimonialController::class, 'store']);
+Route::get('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'show']);
+Route::get('/dashboard/testimonial/{testimonial}/edit', [TestimonialController::class, 'edit']);
+Route::put('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'update']);
+Route::delete('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'destroy']);
 
 // dashboard register akun
 Route::get('/dashboard/register', function () {

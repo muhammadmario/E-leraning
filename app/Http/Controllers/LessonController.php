@@ -148,7 +148,7 @@ class LessonController extends Controller
 
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Classroom::class, 'slug', $request->name);
+        $slug = SlugService::createSlug(Lesson::class, 'slug', $request->name);
         return response()->json(['slug'=>$slug]);
     }
 }

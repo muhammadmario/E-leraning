@@ -129,7 +129,7 @@ class CategoryController extends Controller
 
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Classroom::class, 'slug', $request->name);
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
         return response()->json(['slug'=>$slug]);
     }
 }

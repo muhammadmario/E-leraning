@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Classroom;
 use App\Models\Lesson;
+use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -162,6 +163,28 @@ class DatabaseSeeder extends Seeder
             6. Jika telah matang, tunggu nastar hingga dingin, baru olesi dengan bahan olesan.<br>
             7. Panggang kembali sampai warna kekuningan yang diinginkan.<br>
           </p>'
+        ]);
+
+        
+        Testimonial::create([
+            'name'=>'Adi',
+            'slug'=>'adi',
+            'body'=>'Ditempat ini saya diberikan kesempatan untuk mengembalikan kepercayaan diri saya dan mampu merubah hidup saya',
+            'image'=>'image-testimonial/kopi.jpg'
+        ]);
+
+        Testimonial::create([
+            'name'=>'Messi',
+            'slug'=>'messi',
+            'body'=>' kepercayaan diri saya dan mampu merubah hidup saya',
+            'image'=>'image-testimonial/kopi.jpg'
+        ]);
+
+        Testimonial::create([
+            'name'=>'Ronaldo',
+            'slug'=>'ronaldo',
+            'body'=>'Ditempat ini saya diberikan kesempatan untuk mengembalikan',
+            'image'=>'image-testimonial/kopi.jpg'
         ]);
     }
 }
