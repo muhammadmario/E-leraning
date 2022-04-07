@@ -15,18 +15,21 @@
     
     <form id="fileUploadForm" method="POST" action="/dashboard/kategori" enctype="multipart/form-data" class="md:w-2/3 w-full">
         @csrf
+        {{-- nama kategori --}}
         <label for="name"  class="tracking-wide text-sm font-medium">Nama Kategori</label>
         <input id="name" type="text" name="name" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('name') }}" required>
         @error('name')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- slug --}}
         <label for="slug" class="tracking-wide text-sm font-medium">Slug</label>
         <input id="slug" type="text" name="slug" readonly  class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('slug') }}" required>
         @error('slug')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- gambar --}}
         <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
         <img class="h-16 w-16 img-preview block mb-3">
         <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
@@ -40,6 +43,7 @@
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- kelas --}}
         <label for="classroom_id" class="font-medium">Kelas</label>
         <select id="classroom_id" name="classroom_id" class="form-select block appearance-none w-full py-1 px-2 md:py-2 md:px-4 border-2 mb-2 bg-stone-100 hover:bg-white text-basefont-normal text-gray-700 border-solid border-gray-300 rounded-lg transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" aria-label="Default select example">
             @foreach ($classrooms as $classroom)
@@ -53,8 +57,6 @@
         @error('classroom_id')
                 <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
-
-        <p class="text-sm text-red-600">cu</p>
 
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Tambah</button>

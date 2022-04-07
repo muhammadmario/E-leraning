@@ -22,18 +22,21 @@
     
     <form id="fileUploadForm" method="POST" action="/dashboard/kelas" enctype="multipart/form-data" class="md:w-2/3 w-full">
         @csrf
+        {{-- nama kelas --}}
         <label for="name"  class="tracking-wide text-sm font-medium">Nama Kelas</label>
         <input id="name" type="text" name="name" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('name') }}" required>
         @error('name')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- slug --}}
         <label for="slug" class="tracking-wide text-sm font-medium">Slug</label>
         <input id="slug" type="text" name="slug" readonly  class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('slug') }}" required>
         @error('slug')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- gambar --}}
         <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
         <img class="h-16 w-16 img-preview block mb-3">
         <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">

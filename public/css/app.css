@@ -457,9 +457,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
-.invisible {
-  visibility: hidden;
-}
 .fixed {
   position: fixed;
 }
@@ -526,13 +523,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+}
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .mx-6 {
   margin-left: 1.5rem;
@@ -619,14 +616,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden {
   display: none;
 }
-.aspect-\[4\/3\] {
-  aspect-ratio: 4 / 3;
-}
 .aspect-\[5\/3\] {
   aspect-ratio: 5 / 3;
 }
-.aspect-video {
-  aspect-ratio: 16 / 9;
+.aspect-\[4\/3\] {
+  aspect-ratio: 4 / 3;
 }
 .h-44 {
   height: 11rem;
@@ -665,9 +659,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-16 {
   height: 4rem;
-}
-.h-20 {
-  height: 5rem;
 }
 .h-28 {
   height: 7rem;
@@ -766,9 +757,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .list-decimal {
   list-style-type: decimal;
-}
-.list-none {
-  list-style-type: none;
 }
 .appearance-none {
   -webkit-appearance: none;
@@ -1449,16 +1437,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
-  .md\:aspect-\[5\/3\] {
-    aspect-ratio: 5 / 3;
-  }
-
-  .md\:aspect-\[4\/3\] {
-    aspect-ratio: 4 / 3;
-  }
-
   .md\:aspect-\[6\/3\] {
     aspect-ratio: 6 / 3;
+  }
+
+  .md\:aspect-\[5\/3\] {
+    aspect-ratio: 5 / 3;
   }
 
   .md\:h-72 {
@@ -1538,24 +1522,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: space-evenly;
   }
 
-  .md\:gap-0 {
-    gap: 0px;
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:gap-4 {
     gap: 1rem;
   }
 
-  .md\:gap-1 {
-    gap: 0.25rem;
+  .md\:gap-2 {
+    gap: 0.5rem;
   }
 
   .md\:gap-10 {
     gap: 2.5rem;
-  }
-
-  .md\:gap-2 {
-    gap: 0.5rem;
   }
 
   .md\:border-none {

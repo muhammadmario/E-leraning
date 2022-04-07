@@ -24,9 +24,10 @@
         <table class="table-auto w-full">
             <thead class="border-b-2 border-gray-200 bg-white">
               <tr class="text-sm font-semibold tracking-wide text-left text-black ">
-                <th class="p-3">Gambar</th>
-                <th class="p-3">Video</th>
+                {{-- <th class="p-3">Gambar</th> --}}
+               
                 <th class="p-3">Judul Materi</th>
+                <th class="p-3">Deskripsi</th>
                 <th class="p-3">Kategori</th>
                 <th class="p-3">Kelas</th>
                 <th class="p-3">Aksi</th>
@@ -35,17 +36,18 @@
             <tbody> 
                 @foreach ($lessons as $lesson)
                 <tr class="{{ $loop->index % 2 == 1 ? "bg-white" : "" }} text-sm text-gray-700">
-                    <td class="p-3 ">
+                    {{-- <td class="p-3 ">
                         <img src="{{ asset('storage/'.$lesson->image) }}" alt="{{ $lesson->name }}" class="h-24 aspect-[4/3]">
-                    </td>
-                    <td>
+                    </td> --}}
+                    {{-- <td>
                         <video class="h-24 aspect-[4/3]" controls>
                             <source src="{{asset('storage/'.$lesson->video) }}" type="video/mp4">
                             <source src="movie.ogg" type="video/ogg">
                             Your browser does not support the video tag.
                         </video>
-                    </td>
+                    </td> --}}
                     <td class="p-3">{{ $lesson->name }}</td>
+                    <td class="p-3">{!! Str::limit($lesson->body,100) !!}</td>
                     <td class="p-3">{{ $lesson->category->classroom->name }}</td>
                     <td class="p-3">{{ $lesson->category->name }}</td>
 
