@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -20,7 +21,7 @@
     <title>Atensi</title>
     
 </head>
-<body class="font-inter min-h-screen lg:px-20">
+<body class="font-nunito min-h-screen lg:px-20">
     @include('user.components.navbar')
 
     @yield('content')

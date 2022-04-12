@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'inter': ["Inter", "sans-serif"],
+        'nunito': ["Nunito", "sans-serif"],
       },
       colors:{
         'bsamar':"#1fdf64",

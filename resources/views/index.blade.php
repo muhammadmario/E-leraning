@@ -9,17 +9,20 @@
     </video>
     <div class="flex flex-col w-full items-center md:justify-evenly md:items-center md:flex-row lg:justify-evenly mt-2 lg:py-20">
       <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="w-2/3 md:w-72 md:h-72 lg:w-96 lg:h-96">
-      <div class="w-2/3 h-44 flex flex-col justify-evenly items-center md:w-1/3 md:h-96 md:justify-center md:py-9">
-        <h5 class="uppercase text-center font-extralight  text-xl md:text-2xl lg:text-4xl">Langsung dari<br>para expert<br>di bidangnya</h5>
-        {{-- <p class="font-extralight uppercase text-center text-lg md:leading-[4rem] md:text-4xl lg:leading-[4rem] lg:text-xl lg:tracking-wide md:px-11">Langsung dari <br> para expert di <br> bidangnya</p> --}}
-        <a href="#" class="uppercase px-4 py-2 w-full md:mt-6 bg-green-400 hover:bg-green-500 rounded-sm text-white text-center md:py-4 md:text-lg lg:font-bold lg:tracking-widest ">Gabung sekarang</a>
+      <div class="w-3/4 mt-4 md:mt-0 flex flex-col justify-evenly items-center md:w-1/3 md:justify-center md:py-9 uppercase text-center">
+        <p class="text-xs font-semibold">Dapatkan Kelas Pembinaan Gratis</p>
+        <h5 class="font-extralight text-xl md:text-4xl  lg:text-5xl my-2 lg:leading-[3.5rem]">Langsung dari<br>para expert di<br>bidangnya</h5>
+        <a href="/login" class="px-4 py-2 w-full bg-[#4bd1a0] hover:bg-green-400 rounded-sm text-white md:py-4 md:text-lg lg:font-bold lg:tracking-widest"> 
+          <span class="text-xs md:text-2xl">Gabung sekarang</span>
+        </a>
+        <p class="text-xs mt-2">Dengan bergabung sekarang anda akan mendapatkan benefit untuk online sharing session</p>
       </div>
     </div>
     
-    <div class="grid grid-cols-1 sm:grid-cols-2 mt-2 gap-2 md:gap-1">
+    <div class="grid grid-cols-1 sm:grid-cols-2 mt-2 gap-2 md:gap-0">
       @foreach ($classes as $class)
-      <a href="/kelas/{{ $class->slug }}" class="aspect-[5/3] md:aspect-[6/3] relative group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
-         <img src="{{ asset('storage/'.$class->image) }}" alt="{{ $class->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">
+      <a href="/kelas/{{ $class->slug }}" class="aspect-[5/3] md:aspect-[7/3] relative group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg lg:rounded-none">
+         <img src="{{ asset('storage/'.$class->image) }}" alt="{{ $class->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500 object-cover">
          <span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">
          {{ $class->name }}
         </span>

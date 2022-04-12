@@ -507,6 +507,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-auto {
   margin: auto;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -518,10 +522,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .mx-3 {
   margin-left: 0.75rem;
@@ -668,9 +668,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-height: -moz-max-content;
   max-height: max-content;
 }
-.max-h-screen {
-  max-height: 100vh;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -717,6 +714,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+.w-3\/4 {
+  width: 75%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -936,6 +936,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
+.bg-\[\#4bd1a0\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 209 160 / var(--tw-bg-opacity));
+}
 .bg-cover {
   background-size: cover;
 }
@@ -1044,21 +1048,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-inter {
   font-family: Inter, sans-serif;
 }
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.font-nunito {
+  font-family: Nunito, sans-serif;
 }
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .text-base {
   font-size: 1rem;
@@ -1072,6 +1079,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.font-medium {
+  font-weight: 500;
+}
 .font-extralight {
   font-weight: 200;
 }
@@ -1080,9 +1094,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .font-normal {
   font-weight: 400;
-}
-.font-medium {
-  font-weight: 500;
 }
 .font-bold {
   font-weight: 700;
@@ -1269,6 +1280,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
 }
+.hover\:bg-green-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+}
 .hover\:text-sky-700:hover {
   --tw-text-opacity: 1;
   color: rgb(3 105 161 / var(--tw-text-opacity));
@@ -1401,10 +1416,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: 0px;
   }
 
-  .md\:mt-6 {
-    margin-top: 1.5rem;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -1437,8 +1448,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
-  .md\:aspect-\[6\/3\] {
-    aspect-ratio: 6 / 3;
+  .md\:aspect-\[7\/3\] {
+    aspect-ratio: 7 / 3;
   }
 
   .md\:aspect-\[5\/3\] {
@@ -1463,6 +1474,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:h-8 {
     height: 2rem;
+  }
+
+  .md\:h-44 {
+    height: 11rem;
   }
 
   .md\:w-72 {
@@ -1522,12 +1537,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     justify-content: space-evenly;
   }
 
-  .md\:gap-1 {
-    gap: 0.25rem;
+  .md\:gap-0 {
+    gap: 0px;
   }
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:gap-2 {
@@ -1553,11 +1572,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:py-9 {
     padding-top: 2.25rem;
     padding-bottom: 2.25rem;
-  }
-
-  .md\:px-11 {
-    padding-left: 2.75rem;
-    padding-right: 2.75rem;
   }
 
   .md\:py-4 {
@@ -1590,11 +1604,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2rem;
   }
 
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1615,12 +1624,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.5rem;
   }
 
-  .md\:font-medium {
-    font-weight: 500;
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
-  .md\:leading-\[4rem\] {
-    line-height: 4rem;
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:font-medium {
+    font-weight: 500;
   }
 }
 @media (min-width: 1024px) {
@@ -1660,6 +1675,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:gap-1 {
     gap: 0.25rem;
+  }
+
+  .lg\:rounded-none {
+    border-radius: 0px;
   }
 
   .lg\:p-0 {
@@ -1706,16 +1725,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.5rem;
   }
 
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .lg\:font-bold {
     font-weight: 700;
   }
 
-  .lg\:leading-\[4rem\] {
-    line-height: 4rem;
+  .lg\:leading-\[3rem\] {
+    line-height: 3rem;
   }
 
-  .lg\:tracking-wide {
-    letter-spacing: 0.025em;
+  .lg\:leading-\[3\.5rem\] {
+    line-height: 3.5rem;
   }
 
   .lg\:tracking-widest {
