@@ -622,9 +622,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
 }
-.h-44 {
-  height: 11rem;
-}
 .h-full {
   height: 100%;
 }
@@ -677,6 +674,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-2\/3 {
   width: 66.666667%;
 }
+.w-3\/4 {
+  width: 75%;
+}
 .w-24 {
   width: 6rem;
 }
@@ -714,9 +714,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.w-3\/4 {
-  width: 75%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -884,9 +881,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
-.bg-green-400 {
+.bg-\[\#4bd1a0\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(75 209 160 / var(--tw-bg-opacity));
 }
 .bg-sky-600 {
   --tw-bg-opacity: 1;
@@ -935,10 +932,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
-.bg-\[\#4bd1a0\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 209 160 / var(--tw-bg-opacity));
 }
 .bg-cover {
   background-size: cover;
@@ -1051,21 +1044,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-nunito {
   font-family: Nunito, sans-serif;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-base {
   font-size: 1rem;
@@ -1079,21 +1072,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.font-medium {
-  font-weight: 500;
+.font-semibold {
+  font-weight: 600;
 }
 .font-extralight {
   font-weight: 200;
 }
-.font-semibold {
-  font-weight: 600;
-}
 .font-normal {
   font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
 }
 .font-bold {
   font-weight: 700;
@@ -1248,9 +1237,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.hover\:bg-green-500:hover {
+.hover\:bg-green-400:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 .hover\:bg-gray-400:hover {
   --tw-bg-opacity: 1;
@@ -1279,10 +1268,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-sky-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(2 132 199 / var(--tw-bg-opacity));
-}
-.hover\:bg-green-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 .hover\:text-sky-700:hover {
   --tw-text-opacity: 1;
@@ -1476,10 +1461,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 2rem;
   }
 
-  .md\:h-44 {
-    height: 11rem;
-  }
-
   .md\:w-72 {
     width: 18rem;
   }
@@ -1599,14 +1580,19 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 1rem;
   }
 
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:text-sm {
@@ -1622,16 +1608,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:font-medium {
@@ -1710,6 +1686,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 0px;
   }
 
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1725,17 +1706,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1.5rem;
   }
 
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
   .lg\:font-bold {
     font-weight: 700;
-  }
-
-  .lg\:leading-\[3rem\] {
-    line-height: 3rem;
   }
 
   .lg\:leading-\[3\.5rem\] {

@@ -10,23 +10,23 @@
   
     <ul class="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto md:mr-3 lg:mr-0">
       <li class="border-t md:border-none ">
-        <a href="/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold">Home</a>
+        <a href="/" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker {{ (request()->is('/'))  ? 'font-bold' : '' }}">Home</a>
       </li>
       
       <li class="border-t md:border-none ">
-        <a href="/kelas" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Kelas</a>
+        <a href="/kelas" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker {{ (request()->is('kelas*'))  ? 'font-bold' : '' }}">Kelas</a>
       </li>
       
       <li class="border-t md:border-none ">
-        <a href="/galeri" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Galeri</a>
+        <a href="/galeri" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker {{ (request()->is('galeri*'))  ? 'font-bold' : '' }}">Galeri</a>
       </li>
 
       <li class="border-t md:border-none ">
-        <a href="/lokasi" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Lokasi</a>
+        <a href="/lokasi" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker {{ (request()->is('lokasi*'))  ? 'font-bold' : '' }}">Lokasi</a>
       </li>
 
       <li class="border-t md:border-none ">
-        <a href="/tentang-kami" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker">Tentang Kami</a>
+        <a href="/tentang-kami" class="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker {{ (request()->is('tentang-kami*'))  ? 'font-bold' : '' }}">Tentang Kami</a>
       </li>
 
       <div class="border-r-2 mr-3 border-black hidden md:inline-block"></div>
@@ -64,8 +64,6 @@
       <li class="border-t md:border-none bg-black rounded-md h-min my-auto">
         <a href="/login" class="block md:inline-block px-4 py-2 no-underline text-grey-darkest hover:text-grey-darker text-white">Login</a>
       </li>
-      @endauth
-
-      
+      @endauth 
     </ul>
   </nav>
