@@ -81,13 +81,13 @@ Route::get('/dashboard/testimonial/{testimonial}/edit', [TestimonialController::
 Route::put('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'update']);
 Route::delete('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'destroy']);
 
+
 // dashboard register akun
 Route::get('/dashboard/register', function () {
     return view('dashboard.pages.register.index');
 })->middleware('admin');
 Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('admin');
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('admin');
-
 
 // menambah slug otomatis
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);

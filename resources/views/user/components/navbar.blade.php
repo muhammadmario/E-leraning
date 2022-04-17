@@ -1,4 +1,4 @@
-<nav class="nav flex flex-wrap items-center justify-between px-4 lg:px-0 sticky top-0 z-50 bg-white border-b-2">
+<nav class="nav flex flex-wrap items-center justify-between px-4 lg:px-0 sticky top-0 z-[999] bg-white border-b-2">
     <div class="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
       <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="h-14 w-14 p-1 lg:p-0 ml-3 lg:ml-0">
     </div>
@@ -47,14 +47,14 @@
           <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 group-hover:block">
             @if (auth()->user()->role == 1 || auth()->user()->role == 2 )
             <li>      
-              <a href="/dashboard" class="w-full rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Dashboard</a>
+              <a href="/dashboard" class="w-full bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Dashboard</a>
             </li>
             @endif
             
             <li>
               <form action="/logout" method="POST">
                 @csrf
-                <button class="w-full rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Logout</button>
+                <button class="w-full bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Logout</button>
               </form>
             </li>
           </ul>

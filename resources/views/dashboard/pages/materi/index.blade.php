@@ -28,8 +28,8 @@
                
                 <th class="p-3">Judul Materi</th>
                 <th class="p-3">Deskripsi</th>
-                <th class="p-3">Kategori</th>
                 <th class="p-3">Kelas</th>
+                <th class="p-3">Kategori</th>
                 <th class="p-3">Aksi</th>
               </tr>
             </thead>
