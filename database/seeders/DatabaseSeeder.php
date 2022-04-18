@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Classroom;
+use App\Models\Gallery;
 use App\Models\Lesson;
 use App\Models\Testimonial;
 use App\Models\User;
@@ -185,6 +186,13 @@ class DatabaseSeeder extends Seeder
             'slug'=>'ronaldo',
             'body'=>'Ditempat ini saya diberikan kesempatan untuk mengembalikan',
             'image'=>'image-testimonial/kopi.jpg'
+        ]);
+
+        Gallery::create([
+            'name'=>'penyerahan bantuan oleh menteri',
+            'slug'=>'ronaldo',
+            'body'=>'penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh',
+            'image'=>'gallery-image/kopi.jpg'
         ]);
     }
 }

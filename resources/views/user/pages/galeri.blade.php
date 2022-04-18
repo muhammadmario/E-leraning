@@ -4,23 +4,13 @@
 <div class="flex flex-col">
   <h1 class="text-2xl md:text-3xl font-light">Gallery</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 gap-1 md:gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    @foreach($galleries as $gallery)
     <div>
-      <img  src="http://atensinapza.com/gallery-img/1633538390.WhatsApp%20Image%202021-09-27%20at%2009.26.37.jpeg" alt="" class="img-gallery cursor-pointer aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
-      <h1 class="font-semibold">Penyerahan bantuan oleh menteri</h1>
-      <p class="text-sm">penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh</p>
+      <img  src="{{ asset('storage/'.$gallery->image) }}" alt="" class="img-gallery cursor-pointer aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
+      <h1 class="font-semibold">{{ $gallery->name }}</h1>
+      <p class="text-sm">{{ $gallery->body }}</p>
     </div>
-    
-    <div>
-      <img  src="http://atensinapza.com/gallery-img/1633538109.WhatsApp%20Image%202021-09-27%20at%2009.04.33.jpeg" alt="" class="img-gallery aspect-[5/3] relative h-15 group overflow-hidden cursor-pointer hover:scale-95 transition-all duration-500 rounded-lg">
-      <h1 class="font-semibold">Kegiatan keagamaan pada IPWL BUKIT DOA</h1>
-      <p class="text-sm">kegiatan keagamaan pada IPWL BUKIT DOA, kab. deli serdang - sumatera utara.</p>
-    </div>
-    
-    <div>
-      <img  src="http://atensinapza.com/gallery-img/1633538390.WhatsApp%20Image%202021-09-27%20at%2009.26.37.jpeg" alt="" class="img-gallery cursor-pointer aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
-      <h1 class="font-semibold">Penyerahan bantuan oleh menteri</h1>
-      <p class="text-sm">penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh</p>
-    </div>
+    @endforeach
   </div>
 
   <!-- Modal -->

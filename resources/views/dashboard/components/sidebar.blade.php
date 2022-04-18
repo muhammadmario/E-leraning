@@ -54,12 +54,12 @@
                 <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Banner</h3>
             </li>
         </a>
-        <a href="/materi">
-            <li class="flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6 text-slate-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+        <a href="/dashboard/gallery">
+            <li class="{{ (request()->is('dashboard/gallery*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
                   </svg>
-                <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Gallery</h3>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Gallery</h3>
             </li>
         </a>
         <a href="/dashboard/testimonial">
@@ -70,12 +70,12 @@
                 <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Testimoni</h3>
             </li>
         </a>
-        <a href="/materi">
-            <li class="flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6 text-slate-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+        <a href="/dashboard/blog">
+            <li class="{{ (request()->is('dashboard/blog*')) ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd" />
                   </svg>
-                <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Blog</h3>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Blog</h3>
             </li>
         </a>
         <h2 class="text-slate-600 text-xs md:text-sm md:font-medium md:px-3">Akun</h2>

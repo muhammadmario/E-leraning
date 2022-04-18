@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Classroom;
+use App\Models\Gallery;
 use App\Models\Lesson;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -43,6 +44,13 @@ class PagesController extends Controller
     {
       return view('user.pages.detail-materi',[
          'lesson'=>$lesson
+      ]);
+    }
+
+    public function showGallery(Gallery $gallery)
+    {
+      return view('user.pages.galeri',[
+         'galleries'=>Gallery::latest()->get()
       ]);
     }
 }

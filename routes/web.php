@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
@@ -16,9 +17,7 @@ Route::get('/kelas/{classroom}', [PagesController::class, 'showKategori']);
 Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftarMateri']);
 Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri']);
 
-Route::get('/galeri', function () {
-return view('user.pages.galeri');
-});
+Route::get('/galeri', [PagesController::class,'showGallery']);
 Route::get('/lokasi', function () {
     return view('user.pages.lokasi');
 });
@@ -81,6 +80,16 @@ Route::get('/dashboard/testimonial/{testimonial}/edit', [TestimonialController::
 Route::put('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'update']);
 Route::delete('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'destroy']);
 
+// dashboard gallery
+// Route::resource('/dashboard/gallery', GalleryController::class);
+Route::get('/dashboard/gallery', [GalleryController::class, 'index']);
+Route::get('/dashboard/gallery/create', [GalleryController::class, 'create']);
+Route::post('/dashboard/gallery', [GalleryController::class, 'store']);
+Route::get('/dashboard/gallery/{gallery}', [GalleryController::class, 'show']);
+Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
+Route::put('/dashboard/gallery/{gallery}', [GalleryController::class, 'update']);
+Route::delete('/dashboard/gallery/{gallery}', [GalleryController::class, 'destroy']);
+// Route::get('/dashboard/gallery', [GalleryController::class, 'index']);
 
 // dashboard register akun
 Route::get('/dashboard/register', function () {
