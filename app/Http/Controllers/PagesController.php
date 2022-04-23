@@ -28,7 +28,7 @@ class PagesController extends Controller
        return view('user.pages.kategori',[
           'classroom'=>$classroom,
          //  'categories'=>Category::latest()->where('classroom_id', $classroom->id)->paginate(9)
-           'categories'=>$classroom->category
+          'categories'=>$classroom->category
          ]);   
     }
 
