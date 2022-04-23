@@ -7,6 +7,7 @@ use App\Models\Classroom;
 use App\Models\Gallery;
 use App\Models\Lesson;
 use App\Models\Testimonial;
+use App\Models\Videohomepage;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -14,7 +15,7 @@ class PagesController extends Controller
 
     public function showKelasOnHome()
     {
-       return view('index',['classes'=>Classroom::latest()->get(),'testimonials'=>Testimonial::latest()->get()]);
+       return view('index',['classes'=>Classroom::latest()->get(),'testimonials'=>Testimonial::latest()->get(),'videohomepage'=>Videohomepage::all()]);
     }
 
     public function showKelas()

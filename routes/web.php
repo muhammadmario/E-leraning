@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\VideohomepageController;
 
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
@@ -89,7 +90,14 @@ Route::get('/dashboard/gallery/{gallery}', [GalleryController::class, 'show']);
 Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
 Route::put('/dashboard/gallery/{gallery}', [GalleryController::class, 'update']);
 Route::delete('/dashboard/gallery/{gallery}', [GalleryController::class, 'destroy']);
-// Route::get('/dashboard/gallery', [GalleryController::class, 'index']);
+
+
+// video homepage
+Route::get('/dashboard/video-homepage', [VideohomepageController::class, 'index']);
+Route::get('/dashboard/video-homepage/create', [VideohomepageController::class, 'create']);
+Route::post('/dashboard/video-homepage', [VideohomepageController::class, 'store']);
+Route::delete('/dashboard/video-homepage/{id}', [VideohomepageController::class, 'destroy']);
+
 
 // dashboard register akun
 Route::get('/dashboard/register', function () {

@@ -8,6 +8,8 @@ use App\Models\Gallery;
 use App\Models\Lesson;
 use App\Models\Testimonial;
 use App\Models\User;
+use App\Models\Videohomepage;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -193,6 +195,10 @@ class DatabaseSeeder extends Seeder
             'slug'=>'ronaldo',
             'body'=>'penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh',
             'image'=>'gallery-image/kopi.jpg'
+        ]);
+
+        Videohomepage::Create([
+            'video'=>'homepage-video/nastar.mp4',
         ]);
     }
 }

@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="flex flex-col justify-center px-2 lg:px-1 ">
-    <video class="w-full" controls>
-        <source src="movie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
+    <video class="w-full  lg:h-[38rem] object-fill" controls>
+        <source src="{{asset('storage/'.$videohomepage[0]->video) }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="flex flex-col w-full items-center md:justify-evenly md:items-center md:flex-row lg:justify-evenly mt-2 lg:py-20">
@@ -24,8 +23,8 @@
       <a href="/kelas/{{ $class->slug }}" class="aspect-[5/3] md:aspect-[7/3] relative group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg lg:rounded-none">
          <img src="{{ asset('storage/'.$class->image) }}" alt="{{ $class->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500 object-cover">
          <span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white md:text-2xl lg:text-4xl" style="text-shadow: 0px 0px 6px #000000;">
-         {{ $class->name }}
-        </span>
+          <span class="capitalize">{{ $class->name }}</span> 
+         </span>
       </a>  
       @endforeach
     </div>

@@ -46,12 +46,12 @@
             </li>
         </a>
         <h2 class="text-slate-600 text-xs md:text-sm md:font-medium md:px-3">Kustom</h2>
-        <a href="/materi">
-            <li class="flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6 text-slate-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+        <a href="/dashboard/video-homepage">
+            <li class="{{ (request()->is('dashboard/video-homepage*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z" clip-rule="evenodd" />
                   </svg>
-                <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Banner</h3>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Video Homepage</h3>
             </li>
         </a>
         <a href="/dashboard/gallery">
