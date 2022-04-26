@@ -15,8 +15,8 @@ use App\Http\Controllers\VideohomepageController;
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
 Route::get('/kelas/{classroom}', [PagesController::class, 'showKategori']);
-Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftarMateri']);
-Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri']);
+Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftarMateri'])->middleware('auth');
+Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri'])->middleware('auth');
 
 Route::get('/galeri', [PagesController::class,'showGallery']);
 Route::get('/lokasi', function () {

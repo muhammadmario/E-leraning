@@ -44,7 +44,8 @@ class PagesController extends Controller
     public function showDetailMateri(Classroom $classroom, Category $category, Lesson $lesson)
     {
       return view('user.pages.detail-materi',[
-         'lesson'=>$lesson
+         'lesson'=>$lesson,
+         'categories'=>$category->latest()->take(5)->get()
       ]);
     }
 

@@ -90,7 +90,7 @@ class CategoryController extends Controller
         $rules =[
             'name'=>'required|max:255',
             'classroom_id' => 'required',
-            'image'=>'image|file|max:1024',
+            'image'=>'image|file|max:2084',
         ];
 
         if ($request->slug != $category->slug) {

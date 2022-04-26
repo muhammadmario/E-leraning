@@ -43,7 +43,7 @@ class LessonController extends Controller
             'name' => 'required|max:255',
             'slug' => 'required|unique:categories',
             'body' => 'required',
-            'image'=> 'image|file|max:1024',
+            'image'=> 'image|file|max:2048',
             'video'=> 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi|max:128000',
             'category_id' => 'required',
         ]);
