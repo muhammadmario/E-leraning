@@ -14,6 +14,8 @@ class Lesson extends Model
 
     protected $guarded = ['id'];
 
+    // protected $with = ['category'];
+
     public function sluggable(): array
     {
         return [

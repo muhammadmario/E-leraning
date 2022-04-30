@@ -20,20 +20,18 @@
    
       <div class="md:w-1/3 mt-2 hidden md:block">
          <div class="flex flex-col px-4 gap-2">
-            <h1 class="">Video lainnya : </h1>
-            @foreach ($categories as $category)
-            <a href="/kelas/{{ $category->slug }}" class="aspect-[5/3] relative h-56  group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
-               <img src="{{ asset('storage/'.$category->image) }}" alt="{{ $category->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">
+            <h1>Video lainnya : </h1>
+            @foreach ($lessons as $lesson)
+            <a href="/kelas/{{ $lesson->slug }}" class="aspect-[5/3] relative h-56  group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">
+               <img src="{{ asset('storage/'.$lesson->image) }}" alt="{{ $lesson->name }}" class="w-full h-full bg-cover bg-center group-hover:scale-125 transition-all duration-500">
                <span class="absolute bottom-3 left-3 md:bottom-5 md:left-5 text-white " style="text-shadow: 0px 0px 6px #000000;">
-               {{ $category->name }}
+               {{ $lesson->name }}
               </span>
             </a>  
             @endforeach  
           </div>
       </div>
-   </div>
-  
-   
+   </div> 
 </div>
 
 @endsection

@@ -16,7 +16,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pages.gallery.index', ['galleries'=>Gallery::latest()->get()]);
+        return view('dashboard.pages.gallery.index', ['galleries'=>Gallery::latest()->paginate(5)]);
     }
 
     /**

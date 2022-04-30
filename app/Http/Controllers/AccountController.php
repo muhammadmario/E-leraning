@@ -9,7 +9,7 @@ class AccountController extends Controller
 {
     public function index()
     {
-        return view('dashboard.pages.akun.index',["users"=>User::where('role',3)->orWhere('role', 2)->latest()->get()]);
+        return view('dashboard.pages.akun.index',["users"=>User::where('role',3)->orWhere('role', 2)->latest()->paginate(7)]);
     }
 
     public function destroy(User $user)

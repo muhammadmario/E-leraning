@@ -27,6 +27,13 @@ class Classroom extends Model
         return 'slug';
     }
 
+    public function scopeFilter($query)
+    {
+      if (request('search')) {
+          $query->where('name','like', '%' . request('search'). '%');
+      }
+    }
+
     public function category()
     {
         return $this->hasMany(Category::class);

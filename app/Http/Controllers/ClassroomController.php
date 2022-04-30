@@ -16,7 +16,7 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pages.kelas.index',['classrooms'=>Classroom::latest()->get()]);
+        return view('dashboard.pages.kelas.index',['classrooms'=>Classroom::latest()->paginate(4)]);
 
     }
 

@@ -15,7 +15,7 @@
       </div>
    </div>
 
-   <h1 class="text-2xl md:text-3xl font-light">Kategori : {{ $classroom->name }}</h1>
+   <h1 class="text-2xl md:text-3xl font-light">Kelas : {{ $classroom->name }}</h1>
    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 gap-1 md:gap-2">
       @foreach ($categories as $category)
       <a href="/kelas/{{ $classroom->slug }}/{{ $category->slug }}" class="aspect-[5/3] relative h-15 group overflow-hidden hover:scale-95 transition-all duration-500 rounded-lg">

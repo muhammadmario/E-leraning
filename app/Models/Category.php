@@ -15,6 +15,8 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
+    // protected $with = ['classroom','lesson'];
+
     public function sluggable(): array
     {
         return [

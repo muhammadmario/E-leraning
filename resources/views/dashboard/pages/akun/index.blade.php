@@ -65,5 +65,8 @@
             </tbody>
           </table>
     </div>
+    <div class="w-full flex justify-end mt-2">
+      {{ $users->links() }}
+  </div>
 </div>  
 @endsection

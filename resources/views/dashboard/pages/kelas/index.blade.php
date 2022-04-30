@@ -69,10 +69,11 @@
                     </td>
                   </tr>
                 @endforeach
-           
-      
             </tbody>
           </table>
+    </div>
+    <div class="w-full flex justify-end mt-2">
+        {{ $classrooms->links() }}
     </div>
 </div>  
 @endsection

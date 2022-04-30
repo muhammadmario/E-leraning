@@ -63,5 +63,8 @@
             </tbody>
           </table>
     </div>
+    <div class="w-full flex justify-end mt-2">
+        {{ $categories->links() }}
+    </div>
 </div>  
 @endsection

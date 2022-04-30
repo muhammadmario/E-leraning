@@ -18,7 +18,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-       return view('dashboard.pages.materi.index', ['lessons'=>Lesson::latest()->get()]);
+       return view('dashboard.pages.materi.index', ['lessons'=>Lesson::with(['category'])->latest()->paginate(5)]);
     }
 
     /**

@@ -15,19 +15,24 @@ class PagesController extends Controller
 
     public function showKelasOnHome()
     {
-       return view('index',['classes'=>Classroom::latest()->get(),'testimonials'=>Testimonial::latest()->get(),'videohomepage'=>Videohomepage::all()]);
+       return view('index',[
+          'classes'=>Classroom::latest()->get(),
+          'testimonials'=>Testimonial::latest()->get(),
+          'videohomepage'=>Videohomepage::all()
+         ]);
     }
 
     public function showKelas()
     {
-       return view('user.pages.classroom',['classes'=>Classroom::all()]);
+      
+       return view('user.pages.classroom',['classes'=>Classroom::latest()->filter()->get()]);
     }
 
     public function showKategori(Classroom $classroom, Category $category)
     {
        return view('user.pages.kategori',[
-          'classroom'=>$classroom,
-         //  'categories'=>Category::latest()->where('classroom_id', $classroom->id)->paginate(9)
+          'classroom'=>$classroom, //single kelas dari kelas yg di pilih
+         //  'categories'=>Category::with('classroom')->latest()->where('classroom_id', $classroom->id)->paginate(9)
           'categories'=>$classroom->category
          ]);   
     }
@@ -35,7 +40,7 @@ class PagesController extends Controller
     public function showDaftarMateri(Classroom $classroom, Category $category)
     {
       return view('user.pages.materi',[
-         'name'=>$category->name,
+         'category'=>$category, //single kategori dari kategori yang dipilih
          'classroom'=>$category->classroom->slug,
          'lessons'=>$category->lesson
       ]);
@@ -44,8 +49,8 @@ class PagesController extends Controller
     public function showDetailMateri(Classroom $classroom, Category $category, Lesson $lesson)
     {
       return view('user.pages.detail-materi',[
-         'lesson'=>$lesson,
-         'categories'=>$category->latest()->take(5)->get()
+         'lesson'=>$lesson, //single materi dari materi yang dipilih
+         'lessons'=>$lesson->latest()->take(5)->get()
       ]);
     }
 
