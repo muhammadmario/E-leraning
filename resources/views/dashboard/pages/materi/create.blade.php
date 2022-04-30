@@ -23,7 +23,7 @@
     <form id="fileUploadForm" method="POST" action="/dashboard/materi" enctype="multipart/form-data" class="md:w-2/3 w-full">
         @csrf
         {{-- nama materi --}}
-        <label for="name"  class="tracking-wide text-sm font-medium">Nama Materi</label>
+        <label for="name"  class="tracking-wide text-sm font-medium">Judul Materi</label>
         <input id="name" type="text" name="name" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('name') }}" required>
         @error('name')
             <p class="text-sm text-red-600">{{ $message }}</p>
@@ -46,7 +46,7 @@
 
         {{-- gambar --}}
         <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
-        <img class="h-16 w-16 img-preview block mb-3">
+        <img class="h-48 aspect-[5/3] img-preview block mb-3">
         <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
             <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" /></svg>
@@ -70,8 +70,8 @@
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
-        {{-- kelas --}}
-        <label for="category_id" class="font-medium">Kelas</label>
+        {{-- kategori --}}
+        <label for="category_id" class="font-medium">Kategori</label>
         <select id="category_id" name="category_id" class="form-select block appearance-none w-full py-1 px-2 md:py-2 md:px-4 border-2 mb-2 bg-white hover:bg-white text-basefont-normal text-gray-700 border-solid border-gray-300 rounded-lg transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" aria-label="Default select example">
             @foreach ($categories as $category)
                 @if (old('category_id')== $category->id)

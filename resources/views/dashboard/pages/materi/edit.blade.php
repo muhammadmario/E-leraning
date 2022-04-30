@@ -25,7 +25,7 @@
         @csrf
 
         {{-- nama materi --}}
-        <label for="name" class="tracking-wide text-sm font-medium">Nama Materi</label>
+        <label for="name" class="tracking-wide text-sm font-medium">Judul Materi</label>
         <input id="name" type="text" name="name" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('name', $lesson->name)}}" required>
         @error('name')
             <p class="text-sm text-red-600">{{ $message }}</p>
@@ -38,10 +38,18 @@
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- body --}}
+        <label for="body"  class="tracking-wide text-sm font-medium">Body</label>
+        <input id="body" type="hidden" name="body" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('body',$lesson->body) }}" required>
+        <trix-editor input="body" class="bg-white"></trix-editor>
+        @error('body')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+        @enderror
+
         {{-- gambar --}}
         <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
         @if ($lesson->image)
-            <img src="{{ asset('storage/'.$lesson->image) }}" class="h-28 aspect-[4/3] img-preview block mb-3">
+            <img src="{{ asset('storage/'.$lesson->image) }}" class="h-48 aspect-[5/3] img-preview block mb-3">
         @else
             <img class="h-28 aspect-[4/3] img-preview block mb-3">
         @endif
@@ -72,6 +80,7 @@
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- kategori --}}
         <label for="category_id" class="font-medium">Kategori</label>
         <select id="category_id" name="category_id" class="form-select block appearance-none w-full py-1 px-2 md:py-2 md:px-4 border-2 mb-2 bg-stone-100 hover:bg-white text-basefont-normal text-gray-700 border-solid border-gray-300 rounded-lg transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" aria-label="Default select example">
             @foreach ($categories as $category)
@@ -82,13 +91,6 @@
                 @endif
             @endforeach
         </select>
-
-        <label for="body"  class="tracking-wide text-sm font-medium">Body</label>
-        <input id="body" type="hidden" name="body" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ old('body',$lesson->body) }}" required>
-        <trix-editor input="body" class="bg-white"></trix-editor>
-        @error('body')
-            <p class="text-sm text-red-600">{{ $message }}</p>
-        @enderror
 
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Ubah</button>

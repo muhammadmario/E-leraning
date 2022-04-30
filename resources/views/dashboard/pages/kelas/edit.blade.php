@@ -40,9 +40,9 @@
         {{-- gambar --}}
         <label for="image" class="tracking-wide text-sm font-medium">Gambar</label>
         @if ($classroom->image)
-            <img src="{{ asset('storage/'.$classroom->image) }}" class="h-16 w-16 img-preview block mb-3">
+            <img src="{{ asset('storage/'.$classroom->image) }}" class="h-48 aspect-[5/3] img-preview block mb-3">
         @else
-            <img class="h-16 w-16 img-preview block mb-3">
+            <img class="h-48 aspect-[5/3] img-preview block mb-3">
         @endif
         <label class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
             <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
