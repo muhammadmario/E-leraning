@@ -30,8 +30,13 @@
 
                     <label for="role" class="font-medium">Role</label>
                           <select id="role" name="role" class="form-select block appearance-none w-full py-1 px-2 md:py-2 md:px-4 border-2 mb-2 bg-stone-100 hover:bg-white text-basefont-normal text-gray-700 border-solid border-gray-300 rounded-lg transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" aria-label="Default select example">
+                              @if (auth()->user()->role==1)
                               <option value="2">Guru</option>
                               <option value="3">Murid</option>
+                              @else
+                              <option value="3">Murid</option>
+                              @endif
+                              
                           </select>
                     @error('role')
                           <p class="text-sm text-red-600">{{ $message }}</p>

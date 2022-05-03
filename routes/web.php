@@ -41,70 +41,70 @@ Route::post('/register', [RegisterController::class,'store']);
 //dashboard
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-})->middleware('admin');
+})->middleware('adminandguru');
 
 
 //dashboard kelas
-Route::get('/dashboard/kelas', [ClassroomController::class, 'index']);
-Route::get('/dashboard/kelas/create', [ClassroomController::class, 'create']);
-Route::post('/dashboard/kelas', [ClassroomController::class, 'store']);
-Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'edit']);
-Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update']);
-Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy']);
+Route::get('/dashboard/kelas', [ClassroomController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/kelas/create', [ClassroomController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/kelas', [ClassroomController::class, 'store'])->middleware('admin')->middleware('admin');
+Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update'])->middleware('admin');
+Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy'])->middleware('admin');
 
 
 //dashboard kategori
 // Route::resource('/dashboard/kategori', CategoryController::class);
-Route::get('/dashboard/kategori', [CategoryController::class, 'index']);
-Route::get('/dashboard/kategori/create', [CategoryController::class, 'create']);
-Route::post('/dashboard/kategori', [CategoryController::class, 'store']);
-Route::get('/dashboard/kategori/{category}/edit', [CategoryController::class, 'edit']);
-Route::put('/dashboard/kategori/{category}', [CategoryController::class, 'update']);
-Route::delete('/dashboard/kategori/{category}', [CategoryController::class, 'destroy']);
+Route::get('/dashboard/kategori', [CategoryController::class, 'index'])->middleware('adminandguru');
+Route::get('/dashboard/kategori/create', [CategoryController::class, 'create'])->middleware('adminandguru');
+Route::post('/dashboard/kategori', [CategoryController::class, 'store'])->middleware('adminandguru');
+Route::get('/dashboard/kategori/{category}/edit', [CategoryController::class, 'edit'])->middleware('adminandguru');
+Route::put('/dashboard/kategori/{category}', [CategoryController::class, 'update'])->middleware('adminandguru');
+Route::delete('/dashboard/kategori/{category}', [CategoryController::class, 'destroy'])->middleware('adminandguru');
 
 // dashboard materi
 // Route::resource('/dashboard/materi', LessonController::class);
-Route::get('/dashboard/materi', [LessonController::class, 'index']);
-Route::get('/dashboard/materi/create', [LessonController::class, 'create']);
-Route::post('/dashboard/materi', [LessonController::class, 'store']);
-Route::get('/dashboard/materi/{lesson}', [LessonController::class, 'show']);
-Route::get('/dashboard/materi/{lesson}/edit', [LessonController::class, 'edit']);
-Route::put('/dashboard/materi/{lesson}', [LessonController::class, 'update']);
-Route::delete('/dashboard/materi/{lesson}', [LessonController::class, 'destroy']);
+Route::get('/dashboard/materi', [LessonController::class, 'index'])->middleware('adminandguru');
+Route::get('/dashboard/materi/create', [LessonController::class, 'create'])->middleware('adminandguru');
+Route::post('/dashboard/materi', [LessonController::class, 'store'])->middleware('adminandguru');
+Route::get('/dashboard/materi/{lesson}', [LessonController::class, 'show'])->middleware('adminandguru');
+Route::get('/dashboard/materi/{lesson}/edit', [LessonController::class, 'edit'])->middleware('adminandguru');
+Route::put('/dashboard/materi/{lesson}', [LessonController::class, 'update'])->middleware('adminandguru');
+Route::delete('/dashboard/materi/{lesson}', [LessonController::class, 'destroy'])->middleware('adminandguru');
 
 // dashboard testimonial
-Route::get('/dashboard/testimonial', [TestimonialController::class, 'index']);
-Route::get('/dashboard/testimonial/create', [TestimonialController::class, 'create']);
-Route::post('/dashboard/testimonial', [TestimonialController::class, 'store']);
-Route::get('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'show']);
-Route::get('/dashboard/testimonial/{testimonial}/edit', [TestimonialController::class, 'edit']);
-Route::put('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'update']);
-Route::delete('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'destroy']);
+Route::get('/dashboard/testimonial', [TestimonialController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/testimonial/create', [TestimonialController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/testimonial', [TestimonialController::class, 'store'])->middleware('admin');
+Route::get('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'show'])->middleware('admin');
+Route::get('/dashboard/testimonial/{testimonial}/edit', [TestimonialController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'update'])->middleware('admin');
+Route::delete('/dashboard/testimonial/{testimonial}', [TestimonialController::class, 'destroy'])->middleware('admin');
 
 // dashboard gallery
 // Route::resource('/dashboard/gallery', GalleryController::class);
-Route::get('/dashboard/gallery', [GalleryController::class, 'index']);
-Route::get('/dashboard/gallery/create', [GalleryController::class, 'create']);
-Route::post('/dashboard/gallery', [GalleryController::class, 'store']);
-Route::get('/dashboard/gallery/{gallery}', [GalleryController::class, 'show']);
-Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit']);
-Route::put('/dashboard/gallery/{gallery}', [GalleryController::class, 'update']);
-Route::delete('/dashboard/gallery/{gallery}', [GalleryController::class, 'destroy']);
+Route::get('/dashboard/gallery', [GalleryController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/gallery/create', [GalleryController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/gallery', [GalleryController::class, 'store'])->middleware('admin');
+Route::get('/dashboard/gallery/{gallery}', [GalleryController::class, 'show'])->middleware('admin');
+Route::get('/dashboard/gallery/{gallery}/edit', [GalleryController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/gallery/{gallery}', [GalleryController::class, 'update'])->middleware('admin');
+Route::delete('/dashboard/gallery/{gallery}', [GalleryController::class, 'destroy'])->middleware('admin');
 
 
 // video homepage
-Route::get('/dashboard/video-homepage', [VideohomepageController::class, 'index']);
-Route::get('/dashboard/video-homepage/create', [VideohomepageController::class, 'create']);
-Route::post('/dashboard/video-homepage', [VideohomepageController::class, 'store']);
-Route::delete('/dashboard/video-homepage/{id}', [VideohomepageController::class, 'destroy']);
+Route::get('/dashboard/video-homepage', [VideohomepageController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/video-homepage/create', [VideohomepageController::class, 'create'])->middleware('admin');
+Route::post('/dashboard/video-homepage', [VideohomepageController::class, 'store'])->middleware('admin');
+Route::delete('/dashboard/video-homepage/{id}', [VideohomepageController::class, 'destroy'])->middleware('admin');
 
 
 // dashboard register akun
 Route::get('/dashboard/register', function () {
     return view('dashboard.pages.register.index');
-})->middleware('admin');
-Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('admin');
-Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('admin');
+})->middleware('adminandguru');
+Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('adminandguru');
+Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
 // menambah slug otomatis
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);

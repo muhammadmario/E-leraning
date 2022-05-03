@@ -618,8 +618,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: -moz-min-content;
   height: min-content;
 }
-.h-40 {
-  height: 10rem;
+.h-56 {
+  height: 14rem;
 }
 .h-60 {
   height: 15rem;
@@ -630,14 +630,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
-.h-28 {
-  height: 7rem;
-}
-.h-56 {
-  height: 14rem;
-}
 .h-48 {
   height: 12rem;
+}
+.h-28 {
+  height: 7rem;
 }
 .max-h-max {
   max-height: -webkit-max-content;
@@ -677,11 +674,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-64 {
   width: 16rem;
 }
-.w-1\/3 {
-  width: 33.333333%;
-}
 .w-auto {
   width: auto;
+}
+.w-1\/3 {
+  width: 33.333333%;
 }
 .w-7 {
   width: 1.75rem;
@@ -693,9 +690,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-.w-32 {
-  width: 8rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -756,12 +750,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex-wrap {
   flex-wrap: wrap;
-}
-.items-start {
-  align-items: flex-start;
-}
-.items-end {
-  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -1512,10 +1500,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:items-end {
-    align-items: flex-end;
   }
 
   .md\:items-center {

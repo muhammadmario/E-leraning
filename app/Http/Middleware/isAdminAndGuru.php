@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class isAdmin
+class isAdminAndGuru
 {
     /**
      * Handle an incoming request.
@@ -17,11 +16,9 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if (!auth()->check()||auth()->user()->role == 3||auth()->user()->role == 2) {
+        if (!auth()->check()||auth()->user()->role == 3) {
             return abort(403);
         }
-
         return $next($request);
     }
 }
