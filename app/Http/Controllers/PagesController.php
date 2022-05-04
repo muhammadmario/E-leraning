@@ -50,7 +50,7 @@ class PagesController extends Controller
     {
       return view('user.pages.detail-materi',[
          'lesson'=>$lesson, //single materi dari materi yang dipilih
-         'lessons'=>$lesson->latest()->take(5)->get()
+         'categories'=>$category->with(['classroom'])->latest()->take(5)->get(),
       ]);
     }
 

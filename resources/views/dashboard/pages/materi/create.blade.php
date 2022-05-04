@@ -85,6 +85,12 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        <label for="user_id"  class="tracking-wide text-sm font-medium">Author</label>
+        <input id="user_id" type="text" name="user_id" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ auth()->user()->id }}" required readonly>
+        @error('user_id')
+            <p class="text-sm text-red-600">{{ $message }}</p>
+        @enderror
+
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Tambah</button>
         </div>

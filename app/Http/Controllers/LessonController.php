@@ -18,7 +18,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-       return view('dashboard.pages.materi.index', ['lessons'=>Lesson::with(['category'])->latest()->paginate(5)]);
+       return view('dashboard.pages.materi.index', ['lessons'=>Lesson::with(['category','user'])->latest()->paginate(5)]);
     }
 
     /**
@@ -46,6 +46,7 @@ class LessonController extends Controller
             'image'=> 'image|file|max:2048',
             'video'=> 'required|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi|max:128000',
             'category_id' => 'required',
+            'user_id' => 'required',
         ]);
 
         if ($request->file('image')) {
@@ -100,6 +101,7 @@ class LessonController extends Controller
             'image'=> 'image|file|max:1024',
             'video'=> 'mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi|max:128000',
             'category_id' => 'required',
+            'user_id' => 'required',
         ];
 
         if ($request->slug != $lesson->slug) {

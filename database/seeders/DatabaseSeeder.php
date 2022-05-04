@@ -135,6 +135,7 @@ class DatabaseSeeder extends Seeder
         Lesson::create([
             'name'=>'Sosis Solo',
             'category_id'=>1,
+            'user_id'=>1,
             'slug'=>'sosis-solo',
             'image'=>'image-lesson/sosis-solo.jpg',
             'video'=>'lesson-video/sosis-solo.mp4',
@@ -189,6 +190,20 @@ class DatabaseSeeder extends Seeder
             <ol>
           '
         ]);
+
+        Lesson::create([
+            'name'=>'Pempek Palembang',
+            'category_id'=>2,
+            'user_id'=>1,
+            'slug'=>'pempek-palembang',
+            'image'=>'image-category/PeVz8Z6XPczDsCiI43b3fC9IgeOfNoLq4GGIjxFQ.png',
+            'video'=>'lesson-video/5OvKWUyzXHP9dYvOfpTXeuZJFipBmifVY0kJPX4Y.mp4',
+            'body' => '
+            <div><strong>PEMPEK</strong></div><div>Bahan pembuatan Pempek :</div><ol><li>Ikan Tenggiri yang sudah dihaluskan 500gr</li><li>Sagu Tani 500gr</li><li>Kuning telur 2 butir</li><li>Gula Pasir 2sdm</li><li>Bawang Putih 2 siung yang sudah dihaluskan</li><li>Garam 1,5 sdm</li><li>Bumbu Penyedap 1,5 sdm</li></ol><div>&nbsp;</div><div>Cuko:</div><ol><li>Gula Merah 500gr</li><li>Cabai Rawit</li><li>Asam Jawa</li><li>Gula Pasir</li><li>Garam</li><li>Bawang Putih</li><li>Air 500ml</li></ol><div>&nbsp;</div><div>Cara pembuatan adonan Pempek:</div><ol><li>pertama-tama masak air hingga mendidih dan campurkan minyak goreng sebanyak 3sdm.</li><li>campurkan ikan tenggiri yang sudah dihaluskan dengan air 300ml, aduk sebentar</li><li>campurkan bawang putih yang sudah dihaluskan, kemudian masukan bumbu penyedap, gula, dan kuning telur kemudian aduk hingga adonan merata</li><li>masukan Sagu Tani sedikit demi sedikit kedalam adonan, kemudian aduk kembali</li><li>setelah adonan merata, kemudian bentuk adonan menjadi Lenjer atau Kapal Selam</li><li>taburkan juga sisa-sisa Sagu Tani agar adonan tidak lengket</li><li>kemudian masukan adonan yang sudah dibentuk tadi kedalam air mendidih yang sebelumnya sudah disiapkan, rebus hingga matang</li><li>setelah adonan pempek matang, kemudian masukan kedalam minyak panas. Masak hingga kecoklatan</li></ol><div>&nbsp;</div><div>Cara pembuatan kuah Cuko:</div><ol><li>masak 500ml air hingga mendidih</li><li>masukkan gula merah, garam, gula pasir dan asam jawa, lalu aduk sedikit dan tunggu hingga larut</li><li>kemudian haluskan cabai rawit dan bawang putih kedalam blender</li><li>campurkan cabai rawit dan bawah putih yang sudah dihaluskan kedalam rebusan bumbu yang tadi sudah mendidih</li><li>ketika semua sudah tercampur, saring air rebusan tersebut</li><li>setelah itu dapat disajikan bersama pempek yang sudah matang tadi, dapat juga disajikan dengan tambahan irisan mentimun</li></ol>
+          '
+        ]);
+
+        
 
         // Lesson::create([
         //     'name'=>'Nastar Coklat',
