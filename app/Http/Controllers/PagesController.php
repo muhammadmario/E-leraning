@@ -32,8 +32,8 @@ class PagesController extends Controller
     {
        return view('user.pages.kategori',[
           'classroom'=>$classroom, //single kelas dari kelas yg di pilih
-         //  'categories'=>Category::with('classroom')->latest()->where('classroom_id', $classroom->id)->paginate(9)
-          'categories'=>$classroom->category
+          'categories'=>Category::with('classroom')->latest()->where('classroom_id', $classroom->id)->filter()->paginate(9)
+         //  'categories'=>$classroom->category
          ]);   
     }
 

@@ -31,6 +31,13 @@ class Category extends Model
         return 'slug';
     }
 
+    public function scopeFilter($query)
+    {
+      if (request('search')) {
+          $query->where('name','like', '%' . request('search'). '%');
+      }
+    }
+    
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
