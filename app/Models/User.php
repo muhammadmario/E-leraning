@@ -16,11 +16,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password',
-    // ];
 
     protected $guarded = ['id'];
 
@@ -46,6 +41,11 @@ class User extends Authenticatable
     public function lesson()
     {
         return $this->hasMany(lesson::class);
+    }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
     }
 
 

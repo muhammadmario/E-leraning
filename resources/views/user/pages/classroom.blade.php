@@ -29,8 +29,7 @@
     </div>
      @else
          <h2 class="text-center">Kelas tidak ditemukan</h2>
-     @endif
-     
+     @endif   
 </div>
 
 @endsection

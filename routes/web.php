@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
@@ -25,6 +26,12 @@ Route::get('/lokasi', function () {
 Route::get('/tentang-kami', function () {
     return view('user.pages.tentang');
 });
+
+// komentar
+Route::get('dashboard/comment', [CommentController::class, 'index'])->middleware('adminandguru');
+Route::post('/comment', [CommentController::class, 'store'])->middleware('auth');
+Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->middleware('auth');
+
 
 
 // login

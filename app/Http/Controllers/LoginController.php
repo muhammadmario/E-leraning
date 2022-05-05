@@ -34,7 +34,7 @@ class LoginController extends Controller
             // return redirect()->intended('/kelas');
         }
 
-        return back()->with('loginError', 'Login gagal!');
+        return back()->with('loginError', 'Username / Password Salah!');
     }
 
     public function logout(Request $request)

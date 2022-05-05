@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Classroom;
+use App\Models\Comment;
 use App\Models\Gallery;
 use App\Models\Lesson;
 use App\Models\Testimonial;
@@ -51,6 +52,8 @@ class PagesController extends Controller
       return view('user.pages.detail-materi',[
          'lesson'=>$lesson, //single materi dari materi yang dipilih
          'categories'=>$category->with(['classroom'])->latest()->take(5)->get(),
+         // 'comments' => $lesson->comment,
+         'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->latest()->get()
       ]);
     }
 
