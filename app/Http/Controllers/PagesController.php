@@ -53,7 +53,11 @@ class PagesController extends Controller
          'lesson'=>$lesson, //single materi dari materi yang dipilih
          'categories'=>$category->with(['classroom'])->latest()->take(5)->get(),
          // 'comments' => $lesson->comment,
-         'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->latest()->get()
+         'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->latest()->get(),
+         "replies" => Comment::with(['user', 'lesson'])->latest()->get(),
+
+         // 'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->where('parent_id','0')->latest()->get()
+
       ]);
     }
 

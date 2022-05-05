@@ -44,7 +44,7 @@
           </table>
     </div>
     <div class="w-full flex justify-end mt-2">
-        {{-- {{ $comments->links() }} --}}
+        {{ $comments->links() }}
     </div>
 </div>  
 @endsection

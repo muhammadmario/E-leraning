@@ -10,7 +10,7 @@ class CommentController extends Controller
 {
     public function index()
     {
-        return view('dashboard.pages.komentar.index',['comments'=>Comment::with(['lesson','user'])->latest()->get()]);
+        return view('dashboard.pages.komentar.index',['comments'=>Comment::with(['lesson','user'])->latest()->paginate(10)]);
 
     }
 
@@ -20,7 +20,8 @@ class CommentController extends Controller
     $validatedData =  $request->validate([
         'body' => 'required',
         'user_id' => 'required',
-        'lesson_id' => 'required',   
+        'lesson_id' => 'required',  
+        'parent_id'=> 'required' 
     ]);
 
     Comment::create($validatedData);
@@ -29,6 +30,8 @@ class CommentController extends Controller
     
     return redirect()->back()->with('status', 'Komentar berhasil ditambahkan!');
     }
+
+
 
     public function destroy(Comment $comment)
     {
