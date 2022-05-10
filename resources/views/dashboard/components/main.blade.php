@@ -20,7 +20,7 @@
     @yield('content')
     
 
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/custom-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/trix.js')}}"></script>
 </body>
 </html>

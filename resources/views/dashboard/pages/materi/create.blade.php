@@ -85,8 +85,8 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
-        <label for="user_id"  class="tracking-wide text-sm font-medium">Author</label>
-        <input id="user_id" type="text" name="user_id" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2" value="{{ auth()->user()->id }}" required readonly>
+        <label for="user_id"  class="tracking-wide text-sm font-medium hidden">Author</label>
+        <input id="user_id" type="text" name="user_id" class="w-full py-1 px-2 md:py-2 md:px-4 border-2 rounded-sm mb-2 hidden" value="{{ auth()->user()->id }}" required readonly>
         @error('user_id')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror

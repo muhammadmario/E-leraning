@@ -29,6 +29,8 @@
     </div>
   @else
       <h2 class="text-center">Kategori tidak ditemukan</h2>
+      <a href="/kelas" class="bg-black px-4 py-2 no-underline w-fit hover:text-grey-darker text-white m-auto mt-2 rounded-sm">Kembali</a>
+
   @endif
 </div>
 

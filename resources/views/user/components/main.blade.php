@@ -21,14 +21,16 @@
     <title>Atensi</title>
     
 </head>
-<body class="font-nunito min-h-screen lg:px-20">
+<body class="font-nunito lg:px-20">
     @include('user.components.navbar')
 
-    @yield('content')
+    <div class="min-h-[75vh]">
+        @yield('content')
+    </div>
 
+    @include('user.components.footer')
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/map.js') }}"></script>
-
 </body>
 </html>
