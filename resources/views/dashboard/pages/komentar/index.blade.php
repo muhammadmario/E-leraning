@@ -22,6 +22,7 @@
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black ">Komentar</th>
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Oleh</th>
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Materi</th>
+                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Waktu</th>
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Aksi</th>
               </tr>
             </thead>
@@ -31,6 +32,7 @@
                     <td class="p-3 text-sm text-gray-700">{{ $comment->body }}</td>
                     <td class="p-3 text-sm text-gray-700">{{ $comment->user->username }}</td>
                     <td class="p-3 text-sm text-gray-700">{{ $comment->lesson->name }}</td>
+                    <td class="p-3 text-sm text-gray-700">{{ $comment->updated_at->diffForHumans()}}</td>
                     <td>
                         <a href="/kelas/{{ $comment->lesson->category->classroom->slug }}/{{ $comment->lesson->category->slug }}/{{ $comment->lesson->slug }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

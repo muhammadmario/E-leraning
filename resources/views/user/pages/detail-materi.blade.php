@@ -34,7 +34,7 @@
                <input type="text" value="0" class="hidden form-control relative flex-auto min-w-0  w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" placeholder="Tambah komentar"  name="parent_id">
 
                <div class="flex">
-                  <label for="body" class="  justify-center items-center bg-slate-200 hidden md:flex"><span class="mx-2">{{ auth()->user()->username }}</span></label>
+                  <label for="body" class="justify-center items-center bg-slate-200 hidden md:flex"><span class="mx-2">{{ auth()->user()->username }}</span></label>
                   <input type="text" value="" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-black focus:outline-none" placeholder="Tambah komentar"  name="body">
                </div>
                
@@ -94,13 +94,13 @@
                      <br>
                      @foreach ($replies as $reply)
                         @if($reply->parent_id == $comment->id)
-                        <div class="flex  gap-4">
+                        <div class="flex gap-4 mb-2">
                            <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="avatar" class="h-12 w-12">
                            <div class="flex flex-col justify-center">
                               <div class="flex items-center gap-2">
                                  <h3 class="font-semibold">{{$reply->user->username }}</h3>
                                  <p class="text-xs text-slate-400">{{$reply->updated_at->diffForHumans() }}</p>
-                                 @if (auth()->user()->id == $comment->user->id)
+                                 @if (auth()->user()->id == $reply->user_id)
                                     <form action="/comment/{{$reply->id }}" method="POST">
                                        @method('delete')
                                        @csrf
@@ -137,11 +137,9 @@
               </span>
             </a>  
             @endforeach  
-           
           </div>
       </div>
 
-      
    </div> 
 </div>
 
