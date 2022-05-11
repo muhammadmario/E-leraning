@@ -113,6 +113,11 @@ Route::get('/dashboard/register', function () {
 Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('adminandguru');
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
+// dashboard pesan
+Route::get('/dashboard/pesan', function () {
+    return view('dashboard.pages.pesan.index');
+});
+
 // menambah slug otomatis
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);
 
