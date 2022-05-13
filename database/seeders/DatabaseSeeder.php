@@ -79,6 +79,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Sosis',
             'classroom_id'=>1,
+            'user_id'=>1,
             'slug'=>'sosis',
             'image'=>'image-category/sosis.jpg'
         ]);
@@ -86,6 +87,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Pempek',
             'classroom_id'=>1,
+            'user_id'=>1,
             'slug'=>'pempek',
             'image'=>'image-category/pempek.jpg'
         ]);
@@ -93,6 +95,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Kopi',
             'classroom_id'=>2,
+            'user_id'=>1,
             'slug'=>'kopi',
             'image'=>'image-category/kopi.jpg'
         ]);
@@ -100,6 +103,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Jus',
             'classroom_id'=>2,
+            'user_id'=>1,
             'slug'=>'jus',
             'image'=>'image-category/jus.jpg'
         ]);
@@ -107,6 +111,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Mengemudi Mobil',
             'classroom_id'=>3,
+            'user_id'=>1,
             'slug'=>'mengemudi-mobil',
             'image'=>'image-category/mengemudi-mobil.jpg'
         ]);
@@ -114,6 +119,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Korespondensi B.inggris',
             'classroom_id'=>4,
+            'user_id'=>1,
             'slug'=>'korenspondensi-b.inggris',
             'image'=>'image-category/korespondensi-b.inggris.jpg'
         ]);
@@ -121,6 +127,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Ms.Excel',
             'classroom_id'=>5,
+            'user_id'=>1,
             'slug'=>'ms.excel',
             'image'=>'image-category/ms.excel.jpg'
         ]);
@@ -128,6 +135,7 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name'=>'Ms.Word',
             'classroom_id'=>5,
+            'user_id'=>1,
             'slug'=>'ms.word',
             'image'=>'image-category/ms.word.jpg'
         ]);

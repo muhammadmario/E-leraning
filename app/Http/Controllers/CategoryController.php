@@ -43,6 +43,7 @@ class CategoryController extends Controller
             'slug' => 'required|unique:categories',
             'image'=> 'image|file|max:1024',
             'classroom_id' => 'required',
+            'user_id'=> 'required'
         ]);
 
         if ($request->file('image')) {
@@ -53,7 +54,6 @@ class CategoryController extends Controller
            
 
         return redirect('/dashboard/kategori')->with('success', 'Kelas berhasil ditambahkan!');
-       
     }
 
     /**
@@ -91,6 +91,7 @@ class CategoryController extends Controller
             'name'=>'required|max:255',
             'classroom_id' => 'required',
             'image'=>'image|file|max:2084',
+            'user_id'=> 'required'
         ];
 
         if ($request->slug != $category->slug) {

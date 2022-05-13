@@ -58,6 +58,10 @@
                 <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
 
+        {{-- user id --}}
+        <label for="user_id" class="hidden"></label>
+        <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}" required>
+
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Tambah</button>
         </div>
