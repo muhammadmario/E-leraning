@@ -12,6 +12,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\VideohomepageController;
+use App\Http\Livewire\Admin\Messages\ListConversationAndMessages;
 
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
@@ -114,9 +115,10 @@ Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('a
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
 // dashboard pesan
+// Route::get('/dashboard/pesan', [ListConversationAndMessages::class, 'render']);
 Route::get('/dashboard/pesan', function () {
     return view('dashboard.pages.pesan.index');
-});
+})->middleware('auth');
 
 // menambah slug otomatis
 Route::get('/dashboard/checkSlug', [ClassroomController::class, 'checkSlug']);

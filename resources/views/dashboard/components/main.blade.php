@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="{{asset('css/trix.css')}}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
     
+    @livewireStyles
     <title>Admin Dashbord</title>
 </head>
 <body class="font-inter relative min-h-screen md:flex"> 
@@ -22,6 +22,7 @@
 
     <script src="{{ asset('js/custom-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/trix.js')}}"></script>
+    @livewireScripts
 </body>
 </html>
 
