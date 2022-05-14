@@ -158,11 +158,11 @@
         </a>
         <h2 class="text-slate-600 text-xs md:text-sm md:font-medium md:px-3">Chat</h2>
           <a href="/dashboard/pesan">
-            <li class="flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6 text-slate-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+            <li class="{{ (request()->is('dashboard/pesan*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
                   </svg>
-                <h3 class="text-slate-500 group-hover:text-white font-medium text-sm lg:text-base">Pesan</h3>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Pesan</h3>
             </li>
         </a>
         @endif

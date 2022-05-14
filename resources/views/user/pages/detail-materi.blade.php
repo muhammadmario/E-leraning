@@ -5,9 +5,9 @@
 
    <div class="flex justify-evenly w-full flex-col md:flex-row">
       <div class="w-full md:w-2/3 ">
-         <video class="w-full mt-2" controls>
+         <video class="w-full mt-2" controls controlsList="nodownload">
             <source src="{{asset('storage/'.$lesson->video) }}" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
+            {{-- <source src="movie.ogg" type="video/ogg"> --}}
             Your browser does not support the video tag.
          </video>
 

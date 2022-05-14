@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Conversation extends Model
 {
     use HasFactory;
+    
+    protected $guarded=[];
 
     public function messages()
     {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
@@ -60,7 +61,6 @@ Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'ed
 Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update'])->middleware('admin');
 Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy'])->middleware('admin');
 
-
 //dashboard kategori
 // Route::resource('/dashboard/kategori', CategoryController::class);
 Route::get('/dashboard/kategori', [CategoryController::class, 'index'])->middleware('adminandguru');
@@ -112,6 +112,10 @@ Route::get('/dashboard/register', function () {
     return view('dashboard.pages.register.index');
 })->middleware('adminandguru');
 Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('adminandguru');
+// Route::get('/dashboard/akun', function(){
+//     return view('dashboard.pages.akun.index',['users'=>User::where('role',3)->orWhere('role', 2)->latest()->paginate(7)]);
+// })->middleware('adminandguru');
+
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
 // dashboard pesan

@@ -13,7 +13,11 @@ class ListConversationAndMessages extends Component
 
     public function mount()
     {
-       $this->selectedConversation=  Conversation::query()->where('sender_id', auth()->id())->orWhere('receiver_id', auth()->id())->first();
+        if (session()->has('selectedConversation')) {
+            return $this->selectedConversation = session('selectedConversation');
+        }
+
+       $this->selectedConversation= Conversation::query()->where('sender_id', auth()->id())->orWhere('receiver_id', auth()->id())->first();
         // dd($conversations);
     }
 
