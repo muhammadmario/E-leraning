@@ -64,6 +64,14 @@
               <li>      
                 <a href="/dashboard" class="w-full bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap">Dashboard</a>
               </li>
+              @else
+              <li>      
+                <a href="/chat" class="w-full bg-gray-200 hover:bg-gray-400 py-2 px-4 flex justify-center items-center whitespace-no-wrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black-400 hover:text-black-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                  </svg> Pesan
+                </a>
+              </li>
               @endif
               
               <li>

@@ -43,7 +43,7 @@ Route::post('/logout', [LoginController::class,'logout']);
 
 
 // register
-Route::get('/register', [RegisterController::class,'index']);
+// Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
 
 
@@ -112,16 +112,20 @@ Route::get('/dashboard/register', function () {
     return view('dashboard.pages.register.index');
 })->middleware('adminandguru');
 Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('adminandguru');
-// Route::get('/dashboard/akun', function(){
-//     return view('dashboard.pages.akun.index',['users'=>User::where('role',3)->orWhere('role', 2)->latest()->paginate(7)]);
-// })->middleware('adminandguru');
-
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
 // dashboard pesan
 // Route::get('/dashboard/pesan', [ListConversationAndMessages::class, 'render']);
 Route::get('/dashboard/pesan', function () {
     return view('dashboard.pages.pesan.index');
+})->middleware('auth');
+
+Route::get('/chat', function () {
+    return view('user.pages.chat');
+})->middleware('auth');
+
+Route::get('/kontak', function () {
+    return view('user.pages.kontak', ["users"=>User::where('role', 2)->latest()->paginate(7)]);
 })->middleware('auth');
 
 // menambah slug otomatis

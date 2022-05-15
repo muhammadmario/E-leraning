@@ -14,7 +14,7 @@
             Tambah Akun
         </a>
     </div>
-    hesoyam
+
     
     <div class="overflow-auto rounded-lg shadow">
         <table class="table-auto w-full">

@@ -31,7 +31,7 @@
 
             <button type="submit" class="bg-black  text-white w-1/3 p-2 rounded-lg">Login</button>
         </form> 
-        <p class="text-sm text-center mt-2">Belum punya akun? <a class="text-sky-500" href="/register">Daftar</a></p>
+        {{-- <p class="text-sm text-center mt-2">Belum punya akun? <a class="text-sky-500" href="/register">Daftar</a></p> --}}
 
     </div>
     

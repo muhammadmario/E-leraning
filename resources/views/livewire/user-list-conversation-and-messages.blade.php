@@ -1,13 +1,14 @@
 @if ($conversations->isNotEmpty())
-<div wire:poll class="w-full flex">
+<div wire:poll class="w-full flex border-x-2">
     <div class="w-1/3 bg-white h-[80vh] overflow-y-auto border-r-2 px-2">
-        <div class="h-12 flex items-center border-b-2">
+        <div class="h-12 flex items-center border-b-2 justify-between">
             <h3 class="text-lg">Kontak</h3>
+            <a href="/kontak" class="bg-black text-white px-2 py-2 rounded-md">Cari Kontak</a>
         </div>
         <div class="w-full flex flex-col gap-2 ">
             @foreach ($conversations as $conversation)
             <div class="w-full py-1 rounded-sm cursor-pointer {{ $conversation->id === $selectedConversation->id ? 'bg-sky-500 text-white' : 'bg-slate-50 text-black' }}">
-                <a wire:click="viewMessage({{ $conversation->id }})" class="flex justify-between items-start" >
+                <a wire:click="viewMessage({{ $conversation->id }})" class="flex justify-between items-start">
                     @if ($conversation->sender_id === auth()->id())
                     <div>
                         <h6>{{ $conversation->receiver->name }}</h6>
@@ -24,6 +25,11 @@
                 </a>
             </div>
             @endforeach
+            
+            {{-- <div class="w-full">
+                <h6>Udil</h6>
+                <p class="text-sm">halo om</p>
+            </div> --}}
         </div>
     </div>
     <div class="w-2/3 bg-white h-[80vh] flex flex-col relative">
@@ -57,6 +63,6 @@
           </svg>
         <h3>Tidak ada pesan</h3>
         <h4>Klik tombol dibawah untuk memulai chat dengan user</h4>
-        <a href="/dashboard/akun" class="bg-black text-white px-3 py-2 rounded-md">Go to users</a>
+        <a href="/kontak" class="bg-black text-white px-3 py-2 rounded-md">Kontak</a>
     </div>
 @endif

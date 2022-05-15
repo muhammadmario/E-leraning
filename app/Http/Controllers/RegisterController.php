@@ -27,11 +27,7 @@ class RegisterController extends Controller
 
         User::create($validated);
 
-        // if (auth()->user()->role == 1) {
-        //     return redirect('/admin/akun')->with('success', 'Akun berhasil di tambahkan!');
-        // }
-        
-        return redirect('/login')->with('success', 'Register telah berhasil');
-        
+      
+        return redirect('/dashboard/akun')->with('success', 'Akun berhasil di tambahkan!');        
     }
 }

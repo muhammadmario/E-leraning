@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Conversation;
 use App\Models\Message;
 use Livewire\Component;
+use App\Models\Conversation;
 
-class ListConversationAndMessages extends Component
+class UserListConversationAndMessages extends Component
 {
     public $body;
     public $selectedConversation;
@@ -29,9 +29,6 @@ class ListConversationAndMessages extends Component
             'body'=>$this->body
         ]);
 
-        $conversation = Conversation::find($this->selectedConversation->id);
-        $conversation->touch();
-
         $this->reset('body');
 
         $this->viewMessage($this->selectedConversation->id);
@@ -42,12 +39,12 @@ class ListConversationAndMessages extends Component
         $this->selectedConversation = Conversation::findOrFail($conversationId);
         
     }
-
+    
     public function render()
     {
-        $conversations = Conversation::query()->where('sender_id', auth()->id())->orWhere('receiver_id', auth()->id())->orderBy('updated_at', 'desc')->get();
-        // dd($conversations);
-        return view('livewire.list-conversation-and-messages', [
+        $conversations = Conversation::query()->where('sender_id', auth()->id())->orWhere('receiver_id', auth()->id())->get();
+
+        return view('livewire.user-list-conversation-and-messages', [
             'conversations'=> $conversations,
         ]);
     }
