@@ -55,9 +55,6 @@ class PagesController extends Controller
          // 'comments' => $lesson->comment,
          'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->latest()->get(),
          "replies" => Comment::with(['user', 'lesson'])->get(),
-
-         // 'comments' => Comment::with('user')->where('lesson_id', $lesson->id)->where('parent_id','0')->latest()->get()
-
       ]);
     }
 

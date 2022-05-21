@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex flex-col justify-center px-2 lg:px-1 ">
-    <video class="w-full  lg:h-[38rem] object-fill" controls>
+    <video class="w-full  lg:h-[38rem] object-fill" controls controlsList="nodownload" >
         <source src="{{asset('storage/'.$videohomepage[0]->video) }}" type="video/mp4">
       Your browser does not support the video tag.
     </video>

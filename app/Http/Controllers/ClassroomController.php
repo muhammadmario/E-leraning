@@ -42,7 +42,8 @@ class ClassroomController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:classrooms',
-            'image'=> 'image|file|max:1024'
+            'image'=> 'image|file|max:1024',
+            'user_id'=> 'required'
         ]);
 
         if ($request->file('image')) {
@@ -88,6 +89,7 @@ class ClassroomController extends Controller
         $rules =[
             'name'=>'required|max:255',
             'image'=>'image|file|max:2048',
+            'user_id'=> 'required'
         ];
 
         if ($request->slug != $classroom->slug) {

@@ -1,4 +1,4 @@
-<div class="bg-sky-400 flex justify-between md:hidden fixed top-0 right-0 left-0">
+<div class="bg-sky-500 flex justify-between md:hidden fixed top-0 right-0 left-0">
     <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="h-14 w-14 p-2 ml-3">
     <button class="mobile-menu-button mr-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -115,6 +115,14 @@
             </li>
         </a> 
         <h2 class="text-slate-600 text-xs md:text-sm md:font-medium md:px-3">Menu</h2>
+        <a href="/dashboard/kelas">
+            <li class="{{ (request()->is('dashboard/kelas*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
+                <svg xmlns="http://www.w3.org/2000/svg" class=" h-5 w-5 lg:h-6 lg:w-6 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                  </svg>
+                <h3 class=" group-hover:text-white font-medium text-sm lg:text-base">Kelas</h3>
+            </li>
+        </a>
         <a href="/dashboard/kategori">
             <li class="{{ (request()->is('dashboard/kategori*'))  ? 'bg-sky-500 text-white' : 'bg-white text-slate-500' }} flex gap-2 cursor-pointer py-1 md:py-2 md:px-3 lg:py-3 hover:bg-sky-500  rounded-md group">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6  group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">

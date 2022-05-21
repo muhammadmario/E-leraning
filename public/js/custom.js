@@ -16,3 +16,12 @@ modalButtonWrappers.forEach((e) => {
 //     console.log(src);
 //     modalImg.src = src;
 // };
+
+// const balas = document.querySelectorAll(".balas");
+// // const formBalas = document.querySelectorAll(".form-balas");
+// balas.forEach((e) => {
+//     e.onclick = function () {
+//         let parentContainer = e.target.closest(".form-balas");
+//         console.log(parentContainer);
+//     };
+// });

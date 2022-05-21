@@ -35,7 +35,6 @@ Route::post('/comment', [CommentController::class, 'store'])->middleware('auth')
 Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->middleware('auth');
 
 
-
 // login
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
@@ -54,12 +53,12 @@ Route::get('/dashboard', function () {
 
 
 //dashboard kelas
-Route::get('/dashboard/kelas', [ClassroomController::class, 'index'])->middleware('admin');
-Route::get('/dashboard/kelas/create', [ClassroomController::class, 'create'])->middleware('admin');
-Route::post('/dashboard/kelas', [ClassroomController::class, 'store'])->middleware('admin')->middleware('admin');
-Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'edit'])->middleware('admin');
-Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update'])->middleware('admin');
-Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy'])->middleware('admin');
+Route::get('/dashboard/kelas', [ClassroomController::class, 'index'])->middleware('adminandguru');
+Route::get('/dashboard/kelas/create', [ClassroomController::class, 'create'])->middleware('adminandguru');
+Route::post('/dashboard/kelas', [ClassroomController::class, 'store'])->middleware('adminandguru')->middleware('adminandguru');
+Route::get('/dashboard/kelas/{classroom}/edit', [ClassroomController::class, 'edit'])->middleware('adminandguru');
+Route::put('/dashboard/kelas/{classroom}', [ClassroomController::class, 'update'])->middleware('adminandguru');
+Route::delete('/dashboard/kelas/{classroom}', [ClassroomController::class, 'destroy'])->middleware('adminandguru');
 
 //dashboard kategori
 // Route::resource('/dashboard/kategori', CategoryController::class);

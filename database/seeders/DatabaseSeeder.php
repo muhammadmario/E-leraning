@@ -47,30 +47,35 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Classroom::create([
+            'user_id'=>1,
             'name'=>'Makanan',
             'slug'=>'makanan',
             'image'=>'image-classroom/makanan.jpg'
         ]);
 
         Classroom::create([
+            'user_id'=>1,
             'name'=>'Minuman',
             'slug'=>'minuman',
             'image'=>'image-classroom/minuman.jpg'
         ]);
 
         Classroom::create([
+            'user_id'=>1,
             'name'=>'Mengemudi',
             'slug'=>'mengemudi',
             'image'=>'image-classroom/mengemudi.jpg'
         ]);
 
         Classroom::create([
+            'user_id'=>1,
             'name'=>'Bahasa',
             'slug'=>'bahasa',
             'image'=>'image-classroom/dasar-b.inggris.jpg'
         ]);
 
         Classroom::create([
+            'user_id'=>1,
             'name'=>'Microsoft Office',
             'slug'=>'microsoft-office',
             'image'=>'image-classroom/microsoft.jpg'

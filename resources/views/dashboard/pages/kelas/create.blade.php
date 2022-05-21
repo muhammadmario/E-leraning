@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    <div class="w-full flex">
+    <div class="w-full md:w-2/3 m-auto flex">
         <a href="/dashboard/kelas" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-green-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-green-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
@@ -20,7 +20,7 @@
         </a>
     </div>
     
-    <form id="fileUploadForm" method="POST" action="/dashboard/kelas" enctype="multipart/form-data" class="md:w-2/3 w-full">
+    <form id="fileUploadForm" method="POST" action="/dashboard/kelas" enctype="multipart/form-data" class="md:w-2/3 w-full m-auto">
         @csrf
         {{-- nama kelas --}}
         <label for="name"  class="tracking-wide text-sm font-medium">Nama Kelas</label>
@@ -49,6 +49,10 @@
         @error('image')
             <p class="text-sm text-red-600">{{ $message }}</p>
         @enderror
+
+         {{-- user id --}}
+         <label for="user_id" class="hidden"></label>
+         <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}" required>
 
         <div class="flex justify-end mt-2">
             <button type="submit" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-sky-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-sky-600">Tambah</button>
