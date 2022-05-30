@@ -2,10 +2,18 @@
 
 @section('content')
 <div class="flex flex-col justify-center px-2 lg:px-1 ">
+  @if ($videohomepage->count())
     <video class="w-full  lg:h-[38rem] object-fill" controls controlsList="nodownload" >
-        <source src="{{asset('storage/'.$videohomepage[0]->video) }}" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="{{asset('storage/'.$videohomepage[0]->video) }}" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
+  @else
+  <video class="w-full  lg:h-[38rem] object-fill" controls controlsList="nodownload" >
+    <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  @endif
+    
     <div class="flex flex-col w-full items-center md:justify-evenly md:items-center md:flex-row lg:justify-evenly mt-2 lg:py-20">
       <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="w-2/3 md:w-72 md:h-72 lg:w-96 lg:h-96">
       <div class="w-3/4 mt-4 md:mt-0 flex flex-col justify-evenly items-center md:w-1/3 md:justify-center md:py-9 uppercase text-center">

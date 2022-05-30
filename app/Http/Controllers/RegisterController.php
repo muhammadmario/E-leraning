@@ -30,4 +30,10 @@ class RegisterController extends Controller
       
         return redirect('/dashboard/akun')->with('success', 'Akun berhasil di tambahkan!');        
     }
+
+    // public function edit(User $user)
+    // {
+    //     return view('dashboard.pages.akun.edit', ["users"=>$user]);
+    // }
+
 }

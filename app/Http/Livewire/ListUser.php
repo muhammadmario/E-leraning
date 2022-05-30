@@ -10,8 +10,9 @@ class ListUser extends Component
 {
     public function render()
     {
-        $users = User::where('role',3)->orWhere('role', 2)->latest()->paginate(7);
-        return view('livewire.list-user', ['users'=>$users]);
+        $GuruandUser = User::where('role',3)->orWhere('role', 2)->latest()->paginate(7);
+        $users = User::where('role',3)->latest()->paginate(7);
+        return view('livewire.list-user', ['GuruandUser'=>$GuruandUser, 'users'=>$users]);
     }
 
     public function startConversation($userId)

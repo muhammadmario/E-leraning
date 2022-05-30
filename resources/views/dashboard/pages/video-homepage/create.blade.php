@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    <div class="w-full flex">
+    <div class="w-full md:w-2/3 m-auto flex">
         <a href="/dashboard/video-homepage" class="text-sm md:text-base py-2 px-2 md:py-2 md:px-3 bg-green-500 text-white rounded-md shadow-sm mb-2 flex gap-1 justify-center items-center hover:bg-green-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
@@ -20,15 +20,15 @@
         </a>
     </div>
     
-    <form id="fileUploadForm" method="POST" action="/dashboard/video-homepage" enctype="multipart/form-data" class="md:w-2/3 w-full">
+    <form id="fileUploadForm" method="POST" action="/dashboard/video-homepage" enctype="multipart/form-data" class="md:w-2/3 w-full m-auto md:h-[80vh]  flex flex-col justify-center">
         @csrf
-
         {{-- video --}}
-        <video id="video-prev" width="300" height="300" class="border-2" controls></video>
+        <label for="">Video: </label>
+        <video id="video-prev" width="500" height="500" class="border-2 mb-4" controls></video>
         <label for="video" class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
-            <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <svg class="hidden md:block w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" /></svg>
-            <span class="text-sm md:text-base leading-normal">Select a file</span>
+            <span class="text-sm md:text-base leading-normal hidden md:block">Select a file</span>
         <input id="video" name="video" type="file" accept="video/*"  value="{{ old('video') }}">
         </label>
         @error('video')

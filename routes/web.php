@@ -34,7 +34,6 @@ Route::get('dashboard/comment', [CommentController::class, 'index'])->middleware
 Route::post('/comment', [CommentController::class, 'store'])->middleware('auth');
 Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->middleware('auth');
 
-
 // login
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
@@ -44,7 +43,6 @@ Route::post('/logout', [LoginController::class,'logout']);
 // register
 // Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
-
 
 //dashboard
 Route::get('/dashboard', function () {
@@ -111,6 +109,10 @@ Route::get('/dashboard/register', function () {
     return view('dashboard.pages.register.index');
 })->middleware('adminandguru');
 Route::get('/dashboard/akun', [AccountController::class,"index"])->middleware('adminandguru');
+
+// Route::get('/dashboard/akun/{user:id}/edit', [AccountController::class,'edit'])->middleware('adminandguru');
+// Route::put('/dashboard/akun/{user:id}', [AccountController::class,'update'])->middleware('adminandguru');
+
 Route::delete('/dashboard/akun/{user:id}', [AccountController::class,"destroy"])->middleware('adminandguru');
 
 // dashboard pesan

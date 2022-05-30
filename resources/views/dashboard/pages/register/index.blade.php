@@ -51,7 +51,5 @@
                     <button type="submit" class="bg-black  text-white w-1/3 p-2 rounded-lg">Register</button>
                 </form> 
             </div>
-    
-    
-</div>  
+        </div>  
 @endsection
