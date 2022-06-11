@@ -9,6 +9,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\TestimonialController;
@@ -22,9 +23,11 @@ Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftar
 Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri'])->middleware('auth');
 
 Route::get('/galeri', [PagesController::class,'showGallery']);
-Route::get('/lokasi', function () {
-    return view('user.pages.lokasi');
-});
+// Route::get('/lokasi', function () {
+//     return view('user.pages.lokasi');
+// });
+Route::resource('/lokasi', LocationController::class);
+
 Route::get('/tentang-kami', function () {
     return view('user.pages.tentang');
 });
