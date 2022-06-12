@@ -265,21 +265,21 @@ class DatabaseSeeder extends Seeder
             'name'=>'Messi',
             'slug'=>'messi',
             'body'=>' kepercayaan diri saya dan mampu merubah hidup saya',
-            'image'=>'image-testimonial/kopi.jpg'
+            'image'=>'image-testimonial/avatar.jpg'
         ]);
 
         Testimonial::create([
             'name'=>'Ronaldo',
             'slug'=>'ronaldo',
             'body'=>'Ditempat ini saya diberikan kesempatan untuk mengembalikan',
-            'image'=>'image-testimonial/kopi.jpg'
+            'image'=>'image-testimonial/avatar.jpg'
         ]);
 
         Gallery::create([
-            'name'=>'penyerahan bantuan oleh menteri',
-            'slug'=>'ronaldo',
-            'body'=>'penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh',
-            'image'=>'gallery-image/kopi.jpg'
+            'name'=>'Penyerahan bantuan oleh menteri',
+            'slug'=>'penyerahan-bantuan-oleh-menteri',
+            'body'=>'Penyerahan bantuan oleh menteri sosial untuk wira usaha kepada eks residen IPWL PINTU HIJRAH, banda aceh- aceh',
+            'image'=>'gallery-image/menteri.jpg'
         ]);
 
         Videohomepage::Create([

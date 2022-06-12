@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex flex-col">
-  <h1 class="text-2xl md:text-3xl font-light">Gallery</h1>
+  <h1 class="text-2xl md:text-3xl font-light">Galeri</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-2 gap-1 md:gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
     @foreach($galleries as $gallery)
     <div>

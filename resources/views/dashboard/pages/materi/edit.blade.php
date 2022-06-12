@@ -66,9 +66,9 @@
 
         {{-- video --}}
         @if ($lesson->video)
-            <video id="video-prev" width="300" height="300" class="border-2" controls src="{{ asset('storage/'.$lesson->video) }}"></video>
+            <video id="video-prev" class="border-2 h-48 aspect-[5/3]" controls src="{{ asset('storage/'.$lesson->video) }}"></video>
         @else
-            <video id="video-prev" width="300" height="300" class="border-2" controls></video>
+            <video id="video-prev" class="border-2 h-48 aspect-[5/3]" controls></video>
         @endif
         <label for="video" class="w-fit flex gap-1 items-center justify-center py-1 px-2 md:px-4 md:py-2 bg-white rounded-sm shadow-sm tracking-wide border-2 cursor-pointer hover:bg-sky-400 hover:text-white mb-2">
             <svg class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

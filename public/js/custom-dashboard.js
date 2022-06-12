@@ -1,15 +1,25 @@
-// responsive mobile design for dashboad admin
+// responsive mobile design for dashboard admin
 let btn = document.querySelector(".mobile-menu-button");
 const sidebar = document.querySelector(".sidebar");
+//slug
+const nameTitle = document.querySelector("#name");
+const slug = document.querySelector("#slug");
+// img
+let input = document.getElementById("image");
+let infoArea = document.getElementById("file-upload-filename");
+//video
+const inputVideo = document.getElementById("video");
+const video = document.getElementById("video-prev");
+const videoSource = document.createElement("source");
+// close alert
+let alert_del = document.querySelector(".btn-close-alert");
 
+// responsive mobile design for dashboard admin
 btn.addEventListener("click", () => {
     sidebar.classList.toggle("-translate-x-full");
 });
 
 //slug
-const nameTitle = document.querySelector("#name");
-const slug = document.querySelector("#slug");
-
 nameTitle.addEventListener("change", function () {
     fetch("/dashboard/checkSlug?name=" + nameTitle.value)
         .then((response) => response.json())
@@ -17,16 +27,12 @@ nameTitle.addEventListener("change", function () {
 });
 
 // img
-
-var input = document.getElementById("image");
-var infoArea = document.getElementById("file-upload-filename");
-
 input.addEventListener("change", showFileName);
 function showFileName(event) {
     // the change event gives us the input it occurred in
-    var input = event.srcElement;
+    let input = event.srcElement;
     // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
-    var fileName = input.files[0].name;
+    let fileName = input.files[0].name;
     // use fileName however fits your app best, i.e. add it into a div
     infoArea.textContent = "Nama file: " + fileName;
 }
@@ -42,11 +48,6 @@ function previewImg() {
         imgPreview.src = e.target.result;
     };
 }
-
-//video
-const inputVideo = document.getElementById("video");
-const video = document.getElementById("video-prev");
-const videoSource = document.createElement("source");
 
 inputVideo.addEventListener("change", function () {
     const files = this.files || [];
@@ -67,4 +68,9 @@ inputVideo.addEventListener("change", function () {
     };
 
     reader.readAsDataURL(files[0]);
+});
+
+alert_del.addEventListener("click", function () {
+    console.log("close");
+    alert_del.parentElement.classList.add("hidden");
 });

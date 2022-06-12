@@ -24,7 +24,7 @@
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Username</th>
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Email</th>
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Role</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Password</th>
+                {{-- <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Password</th> --}}
                 <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Aksi</th>
               </tr>
             </thead>
@@ -37,8 +37,13 @@
                       </td> 
                       <td class="p-3 text-sm text-gray-700">{{ $user->username }}</td>
                       <td class="p-3 text-sm text-gray-700">{{ $user->email }}</td>
-                      <td class="p-3 text-sm text-gray-700"> {{ $user->role }}</td>
-                      <td class="p-3 text-sm text-gray-700"> {{ $user->password}}</td>
+                      <td class="p-3 text-sm text-gray-700"> @if ($user->role == 2)
+                          Guru
+                      @else
+                          Murid
+                      @endif</td>
+                      
+                      {{-- <td class="p-3 text-sm text-gray-700"> {{ $user->password}}</td> --}}
                       <td class="p-3 text-sm text-gray-700 flex gap-2">
                           <a href="#" wire:click.prevent="startConversation({{ $user->id }})">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
@@ -71,8 +76,12 @@
                     </td> 
                     <td class="p-3 text-sm text-gray-700">{{ $user->username }}</td>
                     <td class="p-3 text-sm text-gray-700">{{ $user->email }}</td>
-                    <td class="p-3 text-sm text-gray-700"> {{ $user->role }}</td>
-                    <td class="p-3 text-sm text-gray-700"> {{ $user->password}}</td>
+                    <td class="p-3 text-sm text-gray-700"> @if ($user->role == 3)
+                        Murid
+                    @else
+                        -
+                    @endif</td>
+                    {{-- <td class="p-3 text-sm text-gray-700"> {{ $user->password}}</td> --}}
                     <td class="p-3 text-sm text-gray-700 flex gap-2">
                         <a href="#" wire:click.prevent="startConversation({{ $user->id }})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">

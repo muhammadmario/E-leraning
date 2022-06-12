@@ -18,7 +18,7 @@ use App\Http\Livewire\Admin\Messages\ListConversationAndMessages;
 
 Route::get('/', [PagesController::class, 'showKelasOnHome']);
 Route::get('/kelas', [PagesController::class, 'showKelas']);
-Route::get('/kelas/{classroom}', [PagesController::class, 'showKategori']);
+Route::get('/kelas/{classroom}', [PagesController::class, 'showKategori'])->middleware('auth');
 Route::get('/kelas/{classroom}/{category}', [PagesController::class, 'showDaftarMateri'])->middleware('auth');
 Route::get('/kelas/{classroom}/{category}/{lesson}', [PagesController::class, 'showDetailMateri'])->middleware('auth');
 

@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="{{asset('css/trix.css')}}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('image/atensi-logo.png') }}" />
+
     @livewireStyles
     <title>Admin Dashbord</title>
 </head>

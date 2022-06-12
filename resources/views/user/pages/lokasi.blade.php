@@ -17,7 +17,7 @@
             flex
             items-center
             w-full
-            py-4
+            py-4gi
             px-5
             text-base text-gray-800 text-left
             bg-white
