@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Lesson;
 use App\Models\Classroom;
 use Illuminate\Database\Eloquent\Model;
@@ -50,6 +51,6 @@ class Category extends Model
 
     public function user()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(User::class);
     }
 }

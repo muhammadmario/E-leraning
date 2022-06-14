@@ -50,7 +50,7 @@ class GalleryController extends Controller
 
         Gallery::create($validatedData);
 
-        return redirect('/dashboard/gallery')->with('success', 'Kelas berhasil ditambahkan!');
+        return redirect('/dashboard/gallery')->with('success', 'Galeri berhasil ditambahkan!');
     }
 
     /**
@@ -121,7 +121,7 @@ class GalleryController extends Controller
         }
         Gallery::destroy($gallery->id);
 
-        return redirect('/dashboard/gallery')->with('success', 'Gallery Berhasil dihapus!');
+        return redirect('/dashboard/gallery')->with('success', 'Galeri Berhasil dihapus!');
     }
 
     public function checkSlug(Request $request)

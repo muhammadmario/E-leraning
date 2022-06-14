@@ -59,7 +59,7 @@ class LessonController extends Controller
 
         Lesson::create($validatedData);
 
-        return redirect('/dashboard/materi')->with('success', 'Materi berhasil ditambahkan!');
+        return redirect('/dashboard/materi')->with('success', 'Materi Berhasil ditambahkan!');
 
     }
 

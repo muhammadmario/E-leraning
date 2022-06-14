@@ -12,7 +12,12 @@
          </video>
 
          <h1 class="text-2xl md:text-3xl mt-2 mx-2 md:mx-0">{{ $lesson->name}}</h1>
-         <h1 class="text-sm mx-2 md:mx-0">Oleh : {{ $lesson->user->name}} , {{ $lesson->updated_at->diffForHumans() }}</h1>
+         <h1 class="text-sm mx-2 md:mx-0">Oleh : 
+         @if ($lesson->user_id == !null)   
+             {{ $lesson->user->name}}
+         @else
+             Not found
+         @endif  , {{ $lesson->updated_at->diffForHumans() }}</h1>
 
          <div class="body-lesson text-sm md:text-base mx-2 md:mx-0">        
             {!! $lesson->body !!}

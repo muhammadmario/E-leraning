@@ -53,7 +53,7 @@ class CategoryController extends Controller
         Category::create($validatedData);
            
 
-        return redirect('/dashboard/kategori')->with('success', 'Kelas berhasil ditambahkan!');
+        return redirect('/dashboard/kategori')->with('success', 'Kategori Berhasil ditambahkan!');
     }
 
     /**
@@ -125,7 +125,7 @@ class CategoryController extends Controller
         }
         Category::destroy($category->id);
 
-        return redirect('/dashboard/kategori')->with('success', 'Kelas Berhasil dihapus!');
+        return redirect('/dashboard/kategori')->with('success', 'Kategori Berhasil dihapus!');
     }
 
     public function checkSlug(Request $request)

@@ -9,7 +9,9 @@
 
 <div class="sidebar z-[100] h-screen overflow-y-auto no-scrollbar bg-white w-64 space-y-6 py-1 px-2 absolute inset-y-0 left-0 top-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
     <div class="flex md:justify-center">
-        <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="h-14 w-14 p-2 ml-3 md:ml-0 md:p-0 md:mt-3 hidden md:block">
+        <a href="/">
+            <img src="{{ asset('image/atensi-logo.png') }}" alt="logo" class="h-14 w-14 p-2 ml-3 md:ml-0 md:p-0 md:mt-3 hidden md:block">
+        </a>
     </div>
     <ul class="flex px-4 md:px-3 flex-col mt-1 gap-1 lg:gap-1" >  
         @if (auth()->user()->role==1)

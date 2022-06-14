@@ -18,7 +18,7 @@ class RegisterController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required|unique:users|min:5|max:255',
-            'email'=>'required|unique:users|email:dns',
+            'email'=>'required|unique:users',
             'role'=>'nullable',
             'password'=> 'required'
         ]);
@@ -28,7 +28,7 @@ class RegisterController extends Controller
         User::create($validated);
 
       
-        return redirect('/dashboard/akun')->with('success', 'Akun berhasil di tambahkan!');        
+        return redirect('/dashboard/akun')->with('success', 'Akun berhasil ditambahkan!');        
     }
 
     // public function edit(User $user)

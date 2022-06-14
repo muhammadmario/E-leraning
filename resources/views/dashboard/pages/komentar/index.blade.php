@@ -15,38 +15,42 @@
     </div>
     @endif
     
-    <div class="overflow-auto rounded-lg shadow">
-        <table class="table-auto w-full">
-            <thead class="border-b-2 border-gray-200 bg-white">
-              <tr>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black ">Komentar</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Oleh</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Materi</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Waktu</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Aksi</th>
-              </tr>
-            </thead>
-            <tbody> 
-                @foreach ($comments as $comment)
-                <tr class="{{ $loop->index % 2 == 1 ? "bg-white" : "" }}">
-                    <td class="p-3 text-sm text-gray-700">{{ $comment->body }}</td>
-                    <td class="p-3 text-sm text-gray-700">{{ $comment->user->username }}</td>
-                    <td class="p-3 text-sm text-gray-700">{{ $comment->lesson->name }}</td>
-                    <td class="p-3 text-sm text-gray-700">{{ $comment->updated_at->diffForHumans()}}</td>
-                    <td>
-                        <a href="/kelas/{{ $comment->lesson->category->classroom->slug }}/{{ $comment->lesson->category->slug }}/{{ $comment->lesson->slug }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                        </a>    
-                    </td>
+    @if ($comments->count())
+      <div class="overflow-auto rounded-lg shadow">
+          <table class="table-auto w-full">
+              <thead class="border-b-2 border-gray-200 bg-white">
+                <tr>
+                  <th class="p-3 text-sm font-semibold tracking-wide text-left text-black ">Komentar</th>
+                  <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Oleh</th>
+                  <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Materi</th>
+                  <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Waktu</th>
+                  <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Aksi</th>
                 </tr>
-                @endforeach
-            </tbody>
-          </table>
-    </div>
-    <div class="w-full flex justify-end mt-2">
-        {{ $comments->links() }}
-    </div>
+              </thead>
+              <tbody> 
+                  @foreach ($comments as $comment)
+                  <tr class="{{ $loop->index % 2 == 1 ? "bg-white" : "" }}">
+                      <td class="p-3 text-sm text-gray-700">{{ $comment->body }}</td>
+                      <td class="p-3 text-sm text-gray-700">{{ $comment->user->username }}</td>
+                      <td class="p-3 text-sm text-gray-700">{{ $comment->lesson->name }}</td>
+                      <td class="p-3 text-sm text-gray-700">{{ $comment->updated_at->diffForHumans()}}</td>
+                      <td>
+                          <a href="/kelas/{{ $comment->lesson->category->classroom->slug }}/{{ $comment->lesson->category->slug }}/{{ $comment->lesson->slug }}">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                              </svg>
+                          </a>    
+                      </td>
+                  </tr>
+                  @endforeach
+              </tbody>
+            </table>
+      </div>
+      <div class="w-full flex justify-end mt-2">
+          {{ $comments->links() }}
+      </div>
+    @else
+        <h1 class="text-2xl text-center">Komentar kosong</h1>
+    @endif
 </div>  
 @endsection

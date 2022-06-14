@@ -17,7 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->text('body');
             $table->foreignId('user_id');
-            $table->foreignId('lesson_id');
+            $table->foreignId('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->bigInteger('parent_id');
             $table->timestamps();
         });

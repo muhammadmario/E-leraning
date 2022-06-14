@@ -46,7 +46,7 @@ class VideohomepageController extends Controller
 
         Videohomepage::create($validatedData);
 
-        return redirect('/dashboard/video-homepage')->with('success', 'Video berhasil ditambahkan!');
+        return redirect('/dashboard/video-homepage')->with('success', 'Video homepage berhasil ditambahkan!');
 
     }
 

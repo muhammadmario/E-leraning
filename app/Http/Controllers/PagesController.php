@@ -17,7 +17,7 @@ class PagesController extends Controller
     public function showKelasOnHome()
     {
        return view('index',[
-          'classes'=>Classroom::latest()->get(),
+          'classes'=>Classroom::latest()->take(6)->get(),
           'testimonials'=>Testimonial::latest()->get(),
           'videohomepage'=>Videohomepage::all()
          ]);

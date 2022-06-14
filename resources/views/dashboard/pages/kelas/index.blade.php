@@ -29,10 +29,11 @@
     <div class="overflow-auto rounded-lg shadow">
         <table class="table-auto w-full">
             <thead class="border-b-2 border-gray-200 bg-white">
-              <tr>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black ">Gambar</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Nama Kelas</th>
-                <th class="p-3 text-sm font-semibold tracking-wide text-left text-black">Aksi</th>
+              <tr class="text-sm font-semibold tracking-wide text-left text-black">
+                <th class="p-3">Gambar</th>
+                <th class="p-3">Nama Kelas</th>
+                <th class="p-3">Dibuat oleh</th>
+                <th class="p-3">Aksi</th>
               </tr>
             </thead>
             <tbody> 
@@ -42,6 +43,13 @@
                         <img src="{{ asset('storage/'.$classroom->image) }}" alt="{{ $classroom->name }}" class="h-24 aspect-[4/3]">
                     </td>
                     <td class="p-3 text-sm text-gray-700">{{ $classroom->name }}</td>
+                    <td class="p-3 text-sm text-gray-700">
+                        @if ( $classroom->user_id == !null )
+                            {{ $classroom->user->name }}
+                        @else
+                            User not found
+                        @endif
+                    </td>
                     <td class="p-3 text-sm text-gray-700">
                         @if (auth()->user()->role == 2)
                             @if ($classroom->user_id == auth()->user()->id)

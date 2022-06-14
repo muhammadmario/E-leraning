@@ -20,30 +20,67 @@
         </a>
     </div>
     
-    <div class="overflow-auto rounded-lg shadow">
-        <table class="table-auto w-full">
-            <thead class="border-b-2 border-gray-200 bg-white">
-              <tr class="text-sm font-semibold tracking-wide text-left text-black ">               
-                <th class="p-3">Judul Materi</th>
-                <th>Dibuat oleh</th>
-                <th class="p-3">Deskripsi</th>
-                <th class="p-3">Kelas</th>
-                <th class="p-3">Kategori</th>
-                <th class="p-3">Aksi</th>
-              </tr>
-            </thead>
-            <tbody> 
-                @foreach ($lessons as $lesson)
-                <tr class="{{ $loop->index % 2 == 1 ? "bg-white" : "" }} text-sm text-gray-700">
-                    <td class="p-3">{{ $lesson->name }}</td>
-                    <td class="p-3">{{ $lesson->user->name }}</td>
-                    <td class="p-3">{!! Str::limit($lesson->body,100) !!}</td>
-                    <td class="p-3">{{ $lesson->category->classroom->name }}</td>
-                    <td class="p-3">{{ $lesson->category->name }}</td>
-                    <td class="p-3">
-                        <div class="flex flex-row gap-2">
-                            @if (auth()->user()->role == 2)
-                                @if ($lesson->user_id == auth()->user()->id)
+    @if ($lessons->count())
+        <div class="overflow-auto rounded-lg shadow">
+            <table class="table-auto w-full">
+                <thead class="border-b-2 border-gray-200 bg-white">
+                <tr class="text-sm font-semibold tracking-wide text-left text-black ">               
+                    <th class="p-3">Judul Materi</th>
+                    <th class="p-3">Dibuat oleh</th>
+                    <th class="p-3">Deskripsi</th>
+                    <th class="p-3">Kelas</th>
+                    <th class="p-3">Kategori</th>
+                    <th class="p-3">Aksi</th>
+                </tr>
+                </thead>
+                <tbody> 
+                    @foreach ($lessons as $lesson)
+                    <tr class="{{ $loop->index % 2 == 1 ? "bg-white" : "" }} text-sm text-gray-700">
+                        <td class="p-3">{{ $lesson->name }}</td>
+                        <td class="p-3">
+                            @if ( $lesson->user_id == !null )
+                                {{ $lesson->user->name }}
+                            @else
+                                User not found
+                            @endif
+                        </td>
+                        <td class="p-3">{!! Str::limit($lesson->body,100) !!}</td>
+                        <td class="p-3">{{ $lesson->category->classroom->name }}</td>
+                        <td class="p-3">{{ $lesson->category->name }}</td>
+                        <td class="p-3">
+                            <div class="flex flex-row gap-2">
+                                @if (auth()->user()->role == 2)
+                                    @if ($lesson->user_id == auth()->user()->id)
+                                        <a href="/dashboard/materi/{{ $lesson->slug }}" >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                        <a href="/dashboard/materi/{{ $lesson->slug }}/edit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400 hover:text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                        <form action="/dashboard/materi/{{ $lesson->slug }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button onclick="return confirm('Apakah kamu yakin?')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    @else
+                                        <a href="/dashboard/materi/{{ $lesson->slug }}" >
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    @endif
+                                @else
                                     <a href="/dashboard/materi/{{ $lesson->slug }}" >
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
                                             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -65,46 +102,19 @@
                                             </svg>
                                         </button>
                                     </form>
-                                @else
-                                    <a href="/dashboard/materi/{{ $lesson->slug }}" >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
-                                @endif
-                            @else
-                                <a href="/dashboard/materi/{{ $lesson->slug }}" >
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sky-400 hover:text-sky-500" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                                <a href="/dashboard/materi/{{ $lesson->slug }}/edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-400 hover:text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                                <form action="/dashboard/materi/{{ $lesson->slug }}" method="POST">
-                                    @method('delete')
-                                    @csrf
-                                    <button onclick="return confirm('Apakah kamu yakin?')">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </form>
-                            @endif                  
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-          </table>
-    </div>
-    <div class="w-full flex justify-end mt-2">
-        {{ $lessons->links() }}
-    </div>
+                                @endif                  
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="w-full flex justify-end mt-2">
+            {{ $lessons->links() }}
+        </div>
+    @else
+        <h1 class="text-2xl text-center">Materi masih kosong</h1>
+    @endif
 </div>  
 @endsection
