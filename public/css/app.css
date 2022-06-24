@@ -715,9 +715,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto {
   width: auto;
 }
-.w-screen {
-  width: 100vw;
-}
 .min-w-0 {
   min-width: 0px;
 }

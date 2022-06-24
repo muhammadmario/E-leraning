@@ -59,18 +59,24 @@
                   <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="avatar" class="h-12 w-12">
                   <div class="flex flex-col">
                      <div class="flex items-center gap-2">
-                        <h3 class="font-semibold">{{ $comment->user->username }}</h3>
+                        @if ($lesson->user_id == !null)   
+                           <h3 class="font-semibold">{{ $comment->user->username }}</h3>
+                        @else
+                           <h3 class="font-semibold">Not found</h3>
+                        @endif
                         <p class="text-xs text-slate-400">{{ $comment->updated_at->diffForHumans() }}</p>
-                        @if (auth()->user()->id==$comment->user->id)
-                           <form action="/comment/{{ $comment->id }}" method="POST">
-                              @method('delete')
-                              @csrf
-                              <button onclick="return confirm('Apakah kamu yakin?')">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                 </svg>
-                              </button> 
-                           </form>   
+                        @if ($comment->user_id == !null) 
+                           @if ( auth()->user()->id==$comment->user->id)
+                              <form action="/comment/{{ $comment->id }}" method="POST">
+                                 @method('delete')
+                                 @csrf
+                                 <button onclick="return confirm('Apakah kamu yakin?')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                       <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                 </button> 
+                              </form>   
+                           @endif
                         @endif
                      </div>
                      <p class="text-sm">
@@ -84,18 +90,24 @@
                            <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="avatar" class="h-12 w-12">
                            <div class="flex flex-col justify-center">
                               <div class="flex items-center gap-2">
+                                 @if ($lesson->user_id == !null) 
                                  <h3 class="font-semibold">{{$reply->user->username }}</h3>
+                                 @else
+                                 <h3 class="font-semibold">Not found</h3>
+                                 @endif
                                  <p class="text-xs text-slate-400">{{$reply->updated_at->diffForHumans() }}</p>
-                                 @if (auth()->user()->id == $reply->user_id)
-                                    <form action="/comment/{{$reply->id }}" method="POST">
-                                       @method('delete')
-                                       @csrf
-                                       <button onclick="return confirm('Apakah kamu yakin?')">
-                                          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                             <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                          </svg>
-                                       </button> 
-                                    </form>   
+                                 @if ($reply->user_id == !null) 
+                                    @if (auth()->user()->id == $reply->user_id)
+                                       <form action="/comment/{{$reply->id }}" method="POST">
+                                          @method('delete')
+                                          @csrf
+                                          <button onclick="return confirm('Apakah kamu yakin?')">
+                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                             </svg>
+                                          </button> 
+                                       </form>   
+                                    @endif
                                  @endif
                               </div>
                               <p class="text-sm">

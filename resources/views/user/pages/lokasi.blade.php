@@ -11,20 +11,20 @@
       <div class="accordion-item bg-white border border-gray-200">
         <h2 class="accordion-header mb-0" id="headingTwo5">
           <button class="
-            accordion-button
-            collapsed
-            relative
-            flex
-            items-center
-            w-full
-            py-4gi
-            px-5
-            text-base text-gray-800 text-left
-            bg-white
-            border-0
-            rounded-none
-            transition
-            focus:outline-none
+          accordion-button
+          collapsed
+          relative
+          flex
+          items-center
+          w-full
+          py-4
+          px-5
+          text-base text-gray-800 text-left
+          bg-white
+          border-0
+          rounded-none
+          transition
+          focus:outline-none
           " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false"
             aria-controls="collapseTwo5">
             NANGGROE ACEH DARUSALAM
